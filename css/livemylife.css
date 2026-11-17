@@ -412,3 +412,10 @@ li.archive-list-item:hover a {
   margin-left: .55em;
   padding-left: .85em;
 }
+
+/* 访问量徽标（hits.sh），与侧栏/文章页排版对齐 */
+.vc-badge {
+  height: 20px;
+  vertical-align: middle;
+  opacity: .9;
+}
