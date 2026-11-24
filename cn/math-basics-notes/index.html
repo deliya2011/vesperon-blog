@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+
+  <!-- Baidu Tongji -->
+  
+
+  <!-- Baidu Push -->
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <!-- 作者的搜索引擎验证标签已移除：保留它们会让别人的 Google/百度账号能验证你的域名所有权 -->
+  <!-- 你自己要用时，把从 Search Console 拿到的 meta 贴在这里 -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="羽毛落处，皆是归处；于万千轻盈中，拾得其一。"/>
+  <meta name="keyword" content="Vesperon,blog"/>
+  <link rel="shortcut icon" href="/img/avatar/favicon.png"/>
+
+  
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      };
+    </script>
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://blog.vesperon.online/cn/math-basics-notes/">
+  <title>
+    
+      【高等数学基础】学习笔记 - Gathering Feathers
+    
+  </title>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<button class="toggle" type="button" aria-label="Toggle color theme" aria-pressed="false">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</button>
+<script>
+  function getCookieValue(name) {
+    var match = document.cookie.match('(^|[^;]+)\\s*' + name + '\\s*=\\s*([^;]+)');
+    return match ? match.pop() : '';
+  }
+
+  var savedTheme = getCookieValue('sb-color-mode');
+  if (savedTheme === 'dark' || savedTheme === 'light') {
+    document.body.classList.toggle('body--dark', savedTheme === 'dark');
+  }
+
+  var toggleBtn = document.querySelector('.toggle');
+  function updateThemeToggle() {
+    toggleBtn.setAttribute('aria-pressed', String(document.body.classList.contains('body--dark')));
+  }
+  updateThemeToggle();
+
+  toggleBtn.addEventListener('click', function () {
+    document.body.classList.toggle('body--dark');
+    var theme = document.body.classList.contains('body--dark') ? 'dark' : 'light';
+    var exp = new Date();
+    exp.setFullYear(exp.getFullYear() + 1);
+    document.cookie = 'sb-color-mode=' + theme + ';expires=' + exp.toUTCString() + ';path=/;SameSite=Lax';
+    updateThemeToggle();
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Vesperon</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          
+          
+          
+          <li>
+            <a href="/categories/">分类</a>
+          </li>
+          
+          
+          
+          
+          <li>
+            <a href="/tags/">标签</a>
+          </li>
+          
+          
+          
+          
+          <li>
+            <a href="/archive/">归档</a>
+          </li>
+          
+          
+          
+          
+          <li>
+            <a href="/about/">关于</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.45)), url('/img/header_img/sunshine-sea.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.45)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.56)), url('/img/header_img/archive_bg2.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.52)), url('/img/header_img/sunshine-sea.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.52)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.62)), url('/img/header_img/archive_bg2.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url(''); */
+      
+    }
+
+    
+  </style>
+
+
+<!-- Keep the wave edge flush with the header when the theme is served from a CDN. -->
+<style>
+  .preview-overlay .preview-waves {
+    display: block;
+    vertical-align: top;
+  }
+
+  a:focus:not(:focus-visible),
+  button:focus:not(:focus-visible) {
+    outline: none;
+  }
+</style>
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#AI" title="AI">AI</a>
+              
+              <a class="tag" href="/tags/#数学" title="数学">数学</a>
+              
+            </div>
+            <h1>【高等数学基础】学习笔记</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by Vesperon on
+              2026-11-24
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">16</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">3.4k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            
+            <span class="meta">
+              <img class="vc-badge" alt="article views"
+                   src="https://hits.sh/blog.vesperon.online/cn/math-basics-notes.svg?label=Viewed&color=0085a1&style=flat-square">
+            </span>
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+<!-- 页面级背景构图微调：在页面 front-matter 里写 header-position 即可 -->
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <blockquote>
+<p>保证笔记由人类生成，由ds勘误<br>
+不保证笔者回看可以看懂（雾</p>
+</blockquote>
+<p>此篇笔记是机器学习数学基础系列第1篇笔记，共有12篇笔记，将会不断更新，主要用作复习，防止我的记性过于好以至于忘记。</p>
+<h1>0 函数</h1>
+<p><s>非常基础了，高一甚至初中的东西，放出来只是为了补全内容</s></p>
+<h3 id="0-1-函数的定义">0.1 函数的定义</h3>
+<p>量和量之间的关系，如$A=\pi r^2$。<br>
+常见的表现形式：$y=f(x)$，$y=\phi(x)$等。<br>
+函数在$x_0$处取得的函数值：$y_0=y|_{x=x_0}=f(x_0)$。</p>
+<h3 id="0-2-几种函数">0.2 几种函数</h3>
+<h4 id="0-2-1-分段函数">0.2.1 分段函数</h4>
+<p>$$<br>
+f(x) =<br>
+\begin{cases}<br>
+\sqrt{x}, &amp; x \ge 0 \\[4pt]<br>
+-x, &amp; x &lt; 0<br>
+\end{cases}<br>
+$$<br>
+在不同范围的定义域内函数有不同的对应关系，分成几段，故称分段函数。</p>
+<h3 id="0-2-2-反函数">0.2.2 反函数</h3>
+<p>$$h(t)=\frac{1}{2}gt^2 \quad\Rightarrow\quad t(h)=\sqrt{\frac{2h}{g}}$$</p>
+<p>将自变量和因变量的位置颠倒形成的函数，称为反函数。</p>
+<h4 id="0-2-3-显函数和隐函数">0.2.3 显函数和隐函数</h4>
+<p><strong>显函数</strong>：可显式看出对应关系的函数，如$y=x^2+1$<br>
+<strong>隐函数</strong>：不能显式看出对应关系的函数，如$F(x,y)=0 \ , \ 3x+y-4=0$</p>
+<h3 id="0-3函数的几种特性">0.3函数的几种特性</h3>
+<h4 id="0-3-1-奇偶性">0.3.1 奇偶性</h4>
+<p><strong>偶函数</strong>：<br>
+满足$f(-x)=f(x)$<br>
+沿$y$轴对称</p>
+<p>例：$$f(x)=x^2 \Rightarrow f(-x)=(-x)^2=x^2=f(x)$$</p>
+<p><strong>奇函数</strong>：<br>
+满足$f(-x)=-f(x)$<br>
+沿原点对称</p>
+<p>例：<br>
+$$f(x)=x^3 \Rightarrow f(-x)=(-x)^3=-x^3=-f(x)$$</p>
+<h4 id="0-3-2-周期性">0.3.2 周期性</h4>
+<p>$$f(x+T) = f(x)$$<br>
+理解：函数有一定周期规律，不断重复每个周期内的变化，称其有周期性</p>
+<h4 id="0-3-3-单调性">0.3.3 单调性</h4>
+<p><strong>单调递增</strong>：假设有一增函数$f(x)$，假设$x_1&gt;x_2$，则$f(x_1) &gt; f(x_2)$<br>
+<strong>单调不减</strong>：假设有一单调不减函数$g(x)$，假设$x_1 &gt; x_2$,则$g(x_1) \ge g(x_2)$<br>
+<strong>单调递减</strong>：假设有一减函数$h(x)$，假设$x_1&gt;x_2$，则$h(x_1) &lt; h(x_2)$<br>
+<strong>单调不增</strong>：假设有一单调不增函数$l(x)$，假设$x_1&gt;x_2$，则$l(x_1) \le l(x_2)$</p>
+<h1>1 极限</h1>
+<h3 id="1-1-数列">1.1 数列</h3>
+<h4 id="1-1-1-定义">1.1.1 定义</h4>
+<p>按照一定次数排列的一列数：$u_1,u_2,…,u_n,…$，其中$u_n$叫做通项</p>
+<h4 id="1-1-2-性质">1.1.2 性质</h4>
+<p>对于数列${u_n}$，如果当$n$无限增大，其通项无限接近于一个常数$A$，则称该数列以$A$为极限或称数列<strong>收敛</strong>于$A$，否则称数列为<strong>发散</strong>。</p>
+<p>$$<br>
+\lim_{n \to \infty} u_n = A,或u_n \to A (n \to \infty)<br>
+$$<br>
+其他例子：<br>
+$$<br>
+\lim_{n \to \infty} \frac{1}{3^n} = 0 \\<br>
+\\<br>
+\lim_{n \to \infty} \frac{n}{n+1} = 1 \\<br>
+\\<br>
+\lim_{n \to \infty} 2^n 不存在（发散）<br>
+$$</p>
+<h3 id="1-2-极限">1.2 极限</h3>
+<h4 id="1-2-1-符号表示">1.2.1 符号表示</h4>
+<p>$x \to \infty$表示“当$|x|$无限增大时”</p>
+<p>$x \to +\infty$表示“当$x$无限增大时”</p>
+<p>$x \to -\infty$表示“当$x$无限减少时”</p>
+<p>$x \to x_0$表示“当$x$从$x_0$的左右两侧无限接近于$x_0$时”</p>
+<p>$x \to x_0^+$表示“当$x$从$x_0$的右侧无限接近于$x_0$时”</p>
+<p>$x \to x_0^-$表示“当$x$从$x_0$的左侧无限接近于$x_0$时”</p>
+<h4 id="1-2-2-图像-示例">1.2.2 图像&amp;示例</h4>
+<p>$$\lim_{x \to +\infty} e^{-x}=0$$</p>
+<p><img src="screenshot_20261123_163435-region.png" alt="e 的负 x 次方随 x 增大而趋近 0 的曲线"></p>
+<p>$$\lim_{x \to \infty} \frac{1}{x} = 0$$</p>
+<p><img src="screenshot_20261123_163944-region.png" alt="1/x 在 x 趋于无穷时趋近 0 的曲线"></p>
+<p>$$\lim_{x \to -\infty} \arctan x=-\frac{\pi}{2}$$</p>
+<p><img src="screenshot_20261123_164407-region.png" alt="arctan x 在 x 趋于负无穷时趋近 -π/2 的曲线"></p>
+<h4 id="1-2-3-相关定义">1.2.3 相关定义</h4>
+<p>函数在$x_0$的<strong>邻域</strong>内有定义，$\lim_{x \to x_0}f(x)=A$，或$f(x) \to A(x \to x_0)$<br>
+$$\lim_{x \to 1}\frac{x^2-1}{x-1}=\lim_{x \to 1} \frac{(x-1)(x+1)}{x-1}=2$$</p>
+<h4 id="1-2-4-左右极限">1.2.4 左右极限</h4>
+<p>右半邻域 $(x_0,\ x_0+\delta)$；左半邻域 $(x_0-\delta,\ x_0)$。函数在这些邻域内有定义时，才能谈对应一侧的极限。<br>
+$$<br>
+\lim_{x \to x_0^+} f(x) = A,或f(x) \to A(x \to x_0^+)或f(x_0+0)=A\\<br>
+\lim_{x \to x_0^-} f(x) = A,或f(x) \to A(x \to x_0^-)或f(x_0-0)=A<br>
+$$</p>
+<h4 id="1-2-5-性质">1.2.5 性质</h4>
+<p>$$\lim_{x \to x_0} f(x)=A的充要条件是\lim_{x \to x_0^-}f(x)=\lim_{x \to x_0^+} f(x)=A$$<br>
+反例：<br>
+$$f(x)=\begin{cases} x-1 &amp;x&lt;0, \\ 0 &amp;x=0, \\ x+1 &amp;x&gt;0 \end{cases} $$<br>
+当$x \to 0$时$f(x)$的极限<br>
+解：<br>
+$$\lim_{x \to 0^+} f(x) = \lim_{x \to 0^+}(x+1)=1$$<br>
+$$\lim_{x \to 0^-} f(x) = \lim_{x \to 0^-}(x-1)=-1$$<br>
+$$左右极限存在但不相等，$$<br>
+$$\therefore \lim_{x \to 0}f(x)不存在$$</p>
+<h1>2 无穷小与无穷大</h1>
+<h3 id="2-1-无穷小">2.1 无穷小</h3>
+<h4 id="2-1-1-定义">2.1.1 定义</h4>
+<p>以零为极限<br>
+$$\lim_{x \to \infty} \frac{1}{x}=0,则\frac{1}{x}是x \to \infty 时的无穷小。$$<br>
+$$\lim_{x \to 2} (3x-6)=0,则3x-6是x \to 2时的无穷小。$$</p>
+<h4 id="2-1-2-性质">2.1.2 性质</h4>
+<ol>
+<li><strong>有限个</strong>无穷小的代数和仍是无穷小</li>
+<li><strong>有限个</strong>无穷小的积仍是无穷小。</li>
+<li><strong>有界</strong>变量与无穷小的积仍是无穷小。</li>
+<li>无穷个无穷小之和<strong>不一定</strong>是无穷小。例：<br>
+$$<br>
+\lim_{n \to \infty} (\frac{1}{n^2}+\frac{2}{n^2}+…+\frac{n}{n^2})\\<br>
+=\lim_{n \to \infty} \frac{\frac{n(n+1)}{2}}{n^2}\\<br>
+=\lim_{n \to \infty} \frac{n+1}{2n}\\<br>
+=\frac{1}{2}<br>
+$$</li>
+<li>无穷小的商<strong>不一定</strong>是无穷小。例：<br>
+$$\lim_{x \to \infty} \frac{x}{2x} = \frac{1}{2},\quad \lim_{x \to 0} \frac{x^2}{2x}=0,\quad \lim_{x \to 0^+} \frac{2x}{x^2} = +\infty$$（左极限为 $-\infty$，故 $x\to0$ 时该商的极限不存在）</li>
+</ol>
+<h4 id="2-1-3-极限和无穷小的关系">2.1.3 极限和无穷小的关系</h4>
+<p>$$\lim_{x \to x_0}f(x)=A的充要条件f(x)=A+\alpha(x),其中\alpha(x)是x \to x_0 的无穷小$$</p>
+<h4 id="2-1-4-无穷小的比较">2.1.4 无穷小的比较</h4>
+<p>$$\alpha=\alpha(x),\beta=\beta(x)都是无穷小$$<br>
+$$\lim_{x \to x_0}\alpha(x) = 0,\lim_{x \to x_0} \beta(x)=0$$<br>
+如果$\lim_{x \to x_0}{\frac{\beta}{\alpha}}=0$，则称$\beta$是比$\alpha$高阶无穷小。<br>
+如果$\lim_{x \to x_0}{\frac{\beta}{\alpha}}=\infty$，则称$\beta$是比$\alpha$低阶无穷小。<br>
+如果$\lim_{x \to x_0}{\frac{\beta}{\alpha}}=C \not = 0$，则称$\beta$是$\alpha$同阶无穷小。</p>
+<h3 id="2-2-无穷大">2.2 无穷大</h3>
+<h4 id="2-2-1-定义">2.2.1 定义</h4>
+<p><strong>不是一个很大的数</strong>，是相对于变换过程而言<br>
+$$\lim_{x \to x_0}f(x)=\infty \quad\text{或}\quad f(x) \to \infty(x \to x_0)$$</p>
+<h4 id="2-2-2-无穷小和无穷大的关系">2.2.2 无穷小和无穷大的关系</h4>
+<p>在自变量的变换的同一过程中，如果$f(x)$为无穷大，那么$\frac{1}{f(x)}$为无穷小。</p>
+<h1>3 连续性与导数</h1>
+<h3 id="3-1-函数的连续性">3.1 函数的连续性</h3>
+<h4 id="3-1-1-定义">3.1.1 定义</h4>
+<p>设函数$y=f(x)$在点$x_0$的某邻域内有定义，如果当自变量的改变量$\Delta x$趋近于零时，相应函数的改变量$\Delta y$也趋近于零，则称$y=f(x)$在点$x_0$处连续。<br>
+$$<br>
+\lim_{\Delta x \to 0}\Delta y=\lim_{\Delta x \to 0}[f(x_0+\Delta x)-f(x_0)]=0<br>
+$$</p>
+<h4 id="3-1-2条件">3.1.2条件</h4>
+<p>函数$f(x)$在点$x_0$处连续，需要满足的条件：</p>
+<ol>
+<li>函数在该点处有定义</li>
+<li>函数在该点处极限$\lim_{x \to x_0}f(x)$存在</li>
+<li>极限值等于函数值$f(x_0)$</li>
+</ol>
+<p><strong>例</strong>：<br>
+$$函数f(x) = \begin{cases}x+1 &amp;x \le 0, \\ \frac{\sin x}{x} &amp;x &gt; 0 \end{cases}在x=0处的连续性？$$<br>
+$$<br>
+f(0)=1 \\</p>
+<p>\lim_{x \to 0^-}f(x)=\lim_{x \to 0^-}(x+1)=1 \ \ \ \lim_{x \to 0}f(x)=1 \\</p>
+<p>\lim_{x \to 0^+}f(x)=\lim_{x \to 0^+}\frac{\sin x}{x}=1 \ \ \ \lim_{x \to 0}f(x)=f(0)=1<br>
+$$</p>
+<h3 id="3-2-函数的间断点">3.2 函数的间断点</h3>
+<h4 id="3-2-1-定义">3.2.1 定义</h4>
+<p>函数$f(x)$在点$x=x_0$处不连续，则称其为函数的间断点。</p>
+<h4 id="3-2-2-条件">3.2.2 条件</h4>
+<ol>
+<li>函数$f(x)$在点$x_0$处没有定义</li>
+<li>极限$\lim_{x \to x_0} f(x)$不存在</li>
+<li>函数在该点有定义、极限也存在，但 $\lim_{x \to x_0} f(x) \neq f(x_0)$</li>
+</ol>
+<h4 id="3-2-3-性质">3.2.3 性质</h4>
+<ul>
+<li>当$x \to x_0$时，$f(x)$的左右极限存在，则称$x_0$为$f(x)$的第一类间断点，否则为第二类间断点。</li>
+<li>跳跃间断点：$\lim_{x \to x_0^-}f(x)$ 与 $\lim_{x \to x_0^+}f(x)$ 均存在，但不相等</li>
+<li>可去间断点：$\lim_{x \to x_0}f(x)$ 存在，但不等于 $f(x_0)$（或该点无定义）<br>
+<strong>例子</strong>：<br>
+$$函数f(x)=\frac{x^2-1}{x^2-3x+2}的连续性？$$<br>
+$$<br>
+在点x=2,x=1处没有定义 \\ \\<br>
+\lim_{x \to 1^-}\frac{x^2-1}{x^2-3x+2}=\lim_{x \to 1^-}\frac{x+1}{x-2}=-2 \\ \\<br>
+\lim_{x \to 1^+}\frac{x^2-1}{x^2-3x+2}=\lim_{x \to 1^+}\frac{x+1}{x-2}=-2 \\ \\<br>
+\therefore 在x=1处是可去间断点 \\ \\<br>
+\lim_{x \to 2^-}f(x)=-\infty,\ \ \ \lim_{x \to 2^+}f(x)=+\infty \\ \\<br>
+在x=2是第二类间断点<br>
+$$</li>
+</ul>
+<h3 id="3-3-导数">3.3 导数</h3>
+<h4 id="3-3-1-定义">3.3.1 定义</h4>
+<p>如果平均变化率的极限存在，$$\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x}=\lim_{\Delta x \to 0} \frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}$$<br>
+则称此极限为函数$y=f(x)$在点$x_0$处的导数，$f’(x_0)$<br>
+$$y’|<em>{x=x_0}$，$\frac{\mathrm{d}y}{\mathrm{d}x}\big|</em>{x=x_0}$ 或 $\frac{\mathrm{d}f(x)}{\mathrm{d}x}\big|_{x=x_0}$$</p>
+<h4 id="3-3-2-基本导数公式">3.3.2 基本导数公式</h4>
+<p>$$<br>
+\begin{aligned}<br>
+&amp;©’=0 &amp;&amp;(x^{\mu})‘=\mu x^{\mu-1}\\<br>
+&amp;(\sin x)’=\cos x &amp;&amp;(\cos x)‘=-\sin x\\<br>
+&amp;(\tan x)’=\sec^2 x &amp;&amp;(\cot x)‘=-\csc^2 x\\<br>
+&amp;(\sec x)’=\sec x\tan x &amp;&amp;(\csc x)‘=-\csc x\cot x\\<br>
+&amp;(a^x)’=a^x\ln a &amp;&amp;(e^x)‘=e^x\\<br>
+&amp;(\log_a x)’=\frac{1}{x\ln a} &amp;&amp;(\ln x)‘=\frac{1}{x}\\<br>
+&amp;(\arcsin x)’=\frac{1}{\sqrt{1-x^2}} &amp;&amp;(\arccos x)‘=-\frac{1}{\sqrt{1-x^2}}\\<br>
+&amp;(\arctan x)’=\frac{1}{1+x^2} &amp;&amp;(\operatorname{arccot} x)'=-\frac{1}{1+x^2}<br>
+\end{aligned}<br>
+$$</p>
+<h4 id="3-3-3-求导法则">3.3.3 求导法则</h4>
+<p>$$<br>
+\begin{aligned}<br>
+&amp;(u\pm v)‘=u’\pm v’\\<br>
+&amp;(uv)‘=u’v+uv’\\<br>
+&amp;\left(\frac{u}{v}\right)‘=\frac{u’v-uv’}{v^2}\qquad(v\neq0)\\<br>
+&amp;(Cu)‘=Cu’\\<br>
+&amp;\left(\frac{C}{v}\right)‘=-\frac{Cv’}{v^2}\qquad(C\text{ 为常数})\\<br>
+&amp;[f(g(x))]‘=f’(g(x)),g’(x)\qquad\text{（链式法则）}\end{aligned}<br>
+$$</p>
+<p>链式法则是反向传播的全部依据：复合函数的导数等于<strong>外层导数 × 内层导数</strong>，多层网络就是一层层乘下去。</p>
+<h1>4 偏导数</h1>
+<h3 id="4-0-引入">4.0 引入</h3>
+<ul>
+<li>对于一元函数$y=f(x)$只存在$y$随$x$的变化</li>
+<li>二元函数$z=f(x,y)存在z随x变化的变化率，随y变化的变化率，随x,y同时变化的变化率$</li>
+</ul>
+<h3 id="4-1-定义">4.1 定义</h3>
+<p>设函数$z=f(x,y)在点(x_0,y_0)的某个邻域内有定义y=y_0，一元函数f(x,y_0)在点x=x_0处可导，即极限\lim_{\Delta x \to 0}\frac{f(x_0+\Delta x,y_0)-f(x_0,y_0)}{\Delta x}=A$<br>
+则称$A为函数：z=f(x,y)在点(x_0,y_0)处关于自变量x的偏导数记作：f_x(x_0,y_0)或者$$$\frac{\partial z}{\partial x}|<em>{x=x_0 \\ y=y_0}\\ \\<br>
+\frac{\partial f}{\partial x}|</em>{x=x_0 \\ y=y_0} \\ \\<br>
+z_x|_{x=x_0 \\ y=y_0}<br>
+$$</p>
+<h3 id="4-2几何意义">4.2几何意义</h3>
+<p>对 $x$ 求偏导：</p>
+<p>$$\frac{\partial f}{\partial x}\bigg|<em>{\substack{x=x_0\\ y=y_0}}<br>
+=\frac{\mathrm{d}}{\mathrm{d}x}f(x,y_0)\bigg|</em>{x=x_0}$$</p>
+<p>它是曲面 $z=f(x,y)$ 与平面 $y=y_0$ 的<strong>交线</strong>在 $M_0$ 处的切线 $M_0T_x$，对 $x$ 轴的<strong>斜率</strong>。</p>
+<p>对 $y$ 求偏导同理：</p>
+<p>$$\frac{\partial f}{\partial y}\bigg|<em>{\substack{x=x_0\\ y=y_0}}<br>
+=\frac{\mathrm{d}}{\mathrm{d}y}f(x_0,y)\bigg|</em>{y=y_0}$$</p>
+<p>它是曲面与平面 $x=x_0$ 的交线在 $M_0$ 处的切线 $M_0T_y$，对 $y$ 轴的斜率。</p>
+<p><img src="partial-derivative-geometry.png" alt="偏导数的几何意义：曲面 z=f(x,y) 上一点 M0，过 M0 作平行于 x 轴的平面（y=y0）切出一条曲线，切线对 x 轴的斜率就是 ∂f/∂x；过 M0 作平行于 y 轴的平面（x=x0）切出另一条曲线，切线的斜率是 ∂f/∂y"></p>
+<p><strong>例子</strong>：<br>
+$$<br>
+求f(x,y)=x^2+3xy+y^2在点(1,2)处的偏导数。\\ \\<br>
+f_x(x,y)=2x+3y \\ \\<br>
+f_y(x,y)=3x+2y \\ \\<br>
+f_x(1,2)=(2x+3y)|<em>{x=1 \\ y=2}=8 \\ \\<br>
+f_y(1,2)=(3x+2y)|</em>{x=1 \\ y=2}=7<br>
+$$</p>
+<h1>5 方向导数</h1>
+<h3 id="5-0-引入">5.0 引入</h3>
+<p>$$<br>
+函数：z=f(x,y) \\ \\<br>
+|PP’|=\rho =\sqrt{(\Delta x)^2+(\Delta y)^2} \\ \\<br>
+\Delta z=f(x+\Delta x,y+\Delta y)-f(x,y)<br>
+$$</p>
+<h3 id="5-1-定义">5.1 定义</h3>
+<p>如果函数的增量，与这两点距离的比例存在，则称此为在P点沿着L的方向导数$$\frac{\partial f}{\partial l}=\lim_{\rho \to 0}\frac{f(x+\Delta x,y+\Delta y)-f(x,y)}{\rho}$$<br>
+函数：$$f(x,y)在X轴正向\vec{e_1}={1,0},Y轴正向\vec{e_2}={0,1}的方向导数分别为：f_x,f_y，负方向导数为 $-f_x$、$-f_y$$$</p>
+<h3 id="5-2-定理">5.2 定理</h3>
+<p>如果函数$z=f(x,y)在点P(x,y)是可微分的，那么在该点沿任意方向L的方向导数都存在。$<br>
+$$<br>
+\frac{\partial f}{\partial l}=\frac{\partial f}{\partial x}\cos \phi +\frac{\partial f}{\partial y}\sin \phi<br>
+$$<br>
+$\phi为X轴到L的角度$</p>
+<p><strong>例子</strong>：<br>
+$$<br>
+求函数z=xe^{2y}在点P(1,0)处沿从点P(1,0)到点Q(2,-1)的方向的方向导数<br>
+$$<br>
+$$<br>
+解：这里方向\vec{l}即为\overrightarrow{PQ}={1,-1}, \\ \\<br>
+故x轴到方向\vec{l}的转角\phi=-\frac{\pi}{4}. \\ \\<br>
+\because \frac{\partial z}{\partial x}|<em>{(1,0)}=e^{2y}|</em>{(1,0)}=1; \\ \\<br>
+\frac{\partial z}{\partial y}\Big|<em>{(1,0)}=2xe^{2y}\Big|</em>{(1,0)}=2, \\ \\<br>
+所求方向导数\\ \\<br>
+\frac{\partial z}{\partial l}=\cos(-\frac{\pi}{4})+2\sin(-\frac{\pi}{4})=-\frac{\sqrt 2}{2}<br>
+$$</p>
+<h1>6 梯度</h1>
+<h3 id="6-1-定义">6.1 定义</h3>
+<p>函数：$z=f(x,y)$ 在平面区域内具有连续的一阶偏导数，对于其中每一个点 $P(x,y)$ 都有向量</p>
+<p>$$<br>
+\frac{\partial f}{\partial x}\vec{\boldsymbol{i}}<br>
++\frac{\partial f}{\partial y}\vec{\boldsymbol{j}}<br>
+$$</p>
+<p>则其称为函数在点 $P$ 的梯度。</p>
+<p>$$<br>
+\operatorname{grad} f(x,y)<br>
+=\frac{\partial f}{\partial x}\vec{\boldsymbol{i}}<br>
++\frac{\partial f}{\partial y}\vec{\boldsymbol{j}}<br>
+$$<br>
+$\vec{e}=\cos\varphi,\vec{\boldsymbol{i}}+\sin\varphi,\vec{\boldsymbol{j}}$ 是方向 $L$ 上的单位向量：</p>
+<p>$$<br>
+\begin{aligned}<br>
+\frac{\partial f}{\partial l}<br>
+&amp;=\frac{\partial f}{\partial x}\cos\varphi<br>
++\frac{\partial f}{\partial y}\sin\varphi \\[4pt]<br>
+&amp;=\left{\frac{\partial f}{\partial x},\frac{\partial f}{\partial y}\right}<br>
+\cdot{\cos\varphi,\sin\varphi} \\[4pt]<br>
+&amp;=\operatorname{grad} f(x,y)\cdot\vec{e}<br>
+=\left|\operatorname{grad} f(x,y)\right|\cos\theta,<br>
+\qquad \theta=\left(\operatorname{grad} f(x,y),\vec{e}\right)<br>
+\end{aligned}<br>
+$$</p>
+<h3 id="6-2-性质">6.2 性质</h3>
+<ul>
+<li>只有当 $\cos!\left(\operatorname{grad} f(x,y),\vec{e}\right)=1$，$\dfrac{\partial f}{\partial l}$ 才有最大值。</li>
+<li>函数在某点的梯度是一个向量，它的方向与方向导数最大值取得的方向一致；其大小正好是最大的方向导数。</li>
+<li>梯度为等值线（等高线）上的法向量。</li>
+</ul>
+<p><strong>例子</strong>：<br>
+设 $u=xyz+z^{2}+5$，求 $\operatorname{grad} u$，并求在点 $M(0,1,-1)$ 处方向导数的最大（小）值。</p>
+<p>$$<br>
+\because\quad<br>
+\frac{\partial u}{\partial x}=yz,\qquad<br>
+\frac{\partial u}{\partial y}=xz,\qquad<br>
+\frac{\partial u}{\partial z}=xy+2z,<br>
+$$</p>
+<p>$$<br>
+\begin{aligned}<br>
+\therefore\quad<br>
+\operatorname{grad} u\Big|<em>{(0,1,-1)}<br>
+&amp;=\left.(yz,\ xz,\ xy+2z)\right|</em>{(0,1,-1)} \\[4pt]<br>
+&amp;=(-1,\ 0,\ -2)<br>
+\end{aligned}<br>
+$$</p>
+<p>$$<br>
+\text{从而}\qquad<br>
+\max\left{\left.\frac{\partial u}{\partial l}\right|_{M}\right}<br>
+=\left|\operatorname{grad} u\right|=\sqrt{5}<br>
+$$</p>
+<p>$$<br>
+\min\left{\left.\frac{\partial u}{\partial l}\right|_{M}\right}<br>
+=-\left|\operatorname{grad} u\right|=-\sqrt{5}<br>
+$$</p>
+
+
+        <hr>
+        <!-- Pager -->
+        
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/cn/p17849-houran-sequence/" data-toggle="tooltip" data-placement="top" title="题解：P17849「RiOI-(-2)」houran 和序列">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" rel="noopener noreferrer" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" rel="noopener noreferrer" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" rel="noopener noreferrer" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" rel="noopener noreferrer" class="social-share-icon" href="mailto:?subject=【高等数学基础】学习笔记&body=Hi,I found this website and thought you might like it https://blog.vesperon.online/cn/math-basics-notes/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 0. utterances（GitHub Issues，无需服务端 / 无密钥） -->
+
+  <!-- utterances start -->
+  <div class="utterances-wrap">
+    <script src="https://utteranc.es/client.js"
+      repo="deliya2011/vesperon-blog"
+      issue-term="pathname"
+      label="comment"
+      theme="github-dark"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </div>
+  <script>
+    // 跟随站点明暗切换同步评论框主题
+    (function () {
+      function themeName() {
+        return document.body.classList.contains('body--dark') ? 'github-dark' : 'github-light';
+      }
+      function syncTheme() {
+        var f = document.querySelector('iframe.utterances-frame');
+        if (f && f.contentWindow) {
+          f.contentWindow.postMessage({ type: 'set-theme', theme: themeName() }, 'https://utteranc.es');
+        }
+      }
+      document.addEventListener('DOMContentLoaded', function () {
+        var btn = document.querySelector('.toggle');
+        if (btn) btn.addEventListener('click', function () { setTimeout(syncTheme, 60); });
+      });
+    }());
+  </script>
+  <!-- utterances end -->
+
+
+<!-- 1. gitalk comment -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#AI" title="AI">AI</a>
+            
+            <a class="tag" href="/tags/#数学" title="数学">数学</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline friend-links">
+
+          
+          <li>
+            <a href="https://blog.qaaxaap.living/zh/" target="_blank">Qaaxaap</a>
+          </li>
+          
+          <li>
+            <a href="https://pulsar33550336.github.io/" target="_blank">Pulsar</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" rel="noopener noreferrer" href="https://github.com/deliya2011">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Vesperon
+          2026
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://blog.vesperon.online/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res || !localStorage.getItem('searchJson')) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json']);
+          },
+          error: function (e) {
+            console.error('Unable to load the local search index.', e);
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var storedSearchData = localStorage.getItem('searchJson');
+      if (!storedSearchData) {
+        resultContent.innerHTML = '<div id="no-result">Loading search index…</div>';
+        proceedsearch();
+        return;
+      }
+
+      var datas;
+      try {
+        datas = JSON.parse(storedSearchData);
+      } catch (error) {
+        localStorage.removeItem('searchJson');
+        resultContent.innerHTML = '<div id="no-result">Search index could not be loaded. Please try again.</div>';
+        proceedsearch();
+        return;
+      }
+      if (!Array.isArray(datas)) {
+        resultContent.innerHTML = '<div id="no-result">Search index is unavailable.</div>';
+        proceedsearch();
+        return;
+      }
+      isfetched = true;
+
+      function escapeHtml(value) {
+        return String(value).replace(/[&<>'"]/g, function (character) {
+          return ({'&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'})[character];
+        });
+      }
+
+      function safeUrl(value) {
+        try {
+          var url = decodeURIComponent(value || '');
+          return /^(?:https?:)?\/\//i.test(url) || /^(?:\/|\.\/|\.\.\/)/.test(url) ? url : '#';
+        } catch (error) {
+          return '#';
+        }
+      }
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = safeUrl(data.url);
+
+            var date = data.date || '';
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += escapeHtml(text.substring(prevEnd, hit.position));
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + escapeHtml(text.substring(hit.position, end)) + '</b>';
+                  prevEnd = end;
+                });
+                result += escapeHtml(text.substring(prevEnd, slice.end));
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' rel='noopener noreferrer' href='" + escapeHtml(articleUrl) + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + escapeHtml(dateTime) + "</time>";
+              } else {
+                resultItem += "<a target='_blank' rel='noopener noreferrer' href='" + escapeHtml(articleUrl) + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + escapeHtml(title) + "</div><time class='search-result-date'>" + escapeHtml(dateTime) + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + escapeHtml(safeUrl(imgUrl)) + "' width='64' height='48' alt=''></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	</body>
+</html>
