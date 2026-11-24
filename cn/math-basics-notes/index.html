@@ -582,12 +582,12 @@ $$\begin{gathered}f(0)=1 \\ \lim_{x \to 0^-}f(x)=\lim_{x \to 0^-}(x+1)=1 \ \ \ \
 <h3 id="3-3-导数">3.3 导数</h3>
 <h4 id="3-3-1-定义">3.3.1 定义</h4>
 <p>如果平均变化率的极限 $\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x}=\lim_{\Delta x \to 0} \frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}$ 存在，<br>
-则称此极限为函数 $y=f(x)$ 在点 $x_0$ 处的导数，记作 $f’(x_0)$，即<br>
-$$y’\big|<em>{x=x_0},\qquad \frac{\mathrm{d}y}{\mathrm{d}x}\bigg|</em>{x=x_0},\qquad \frac{\mathrm{d}f(x)}{\mathrm{d}x}\bigg|_{x=x_0}$$</p>
+则称此极限为函数 $y=f(x)$ 在点 $x_0$ 处的导数，记作 $f'(x_0)$，即<br>
+$$y'\big|<em>{x=x_0},\qquad \frac{\mathrm{d}y}{\mathrm{d}x}\bigg|</em>{x=x_0},\qquad \frac{\mathrm{d}f(x)}{\mathrm{d}x}\bigg|_{x=x_0}$$</p>
 <h4 id="3-3-2-基本导数公式">3.3.2 基本导数公式</h4>
-<p>$$\begin{aligned} &amp;©’=0 &amp;&amp;(x^{\mu})‘=\mu x^{\mu-1}\\ &amp;(\sin x)’=\cos x &amp;&amp;(\cos x)‘=-\sin x\\ &amp;(\tan x)’=\sec^2 x &amp;&amp;(\cot x)‘=-\csc^2 x\\ &amp;(\sec x)’=\sec x\tan x &amp;&amp;(\csc x)‘=-\csc x\cot x\\ &amp;(a^x)’=a^x\ln a &amp;&amp;(e^x)‘=e^x\\ &amp;(\log_a x)’=\frac{1}{x\ln a} &amp;&amp;(\ln x)‘=\frac{1}{x}\\ &amp;(\arcsin x)’=\frac{1}{\sqrt{1-x^2}} &amp;&amp;(\arccos x)‘=-\frac{1}{\sqrt{1-x^2}}\\ &amp;(\arctan x)’=\frac{1}{1+x^2} &amp;&amp;(\operatorname{arccot} x)'=-\frac{1}{1+x^2} \end{aligned}$$</p>
+<p>$$\begin{aligned} &amp;(C)'=0 &amp;&amp;(x^{\mu})'=\mu x^{\mu-1}\\ &amp;(\sin x)'=\cos x &amp;&amp;(\cos x)'=-\sin x\\ &amp;(\tan x)'=\sec^2 x &amp;&amp;(\cot x)'=-\csc^2 x\\ &amp;(\sec x)'=\sec x\tan x &amp;&amp;(\csc x)'=-\csc x\cot x\\ &amp;(a^x)'=a^x\ln a &amp;&amp;(e^x)'=e^x\\ &amp;(\log_a x)'=\frac{1}{x\ln a} &amp;&amp;(\ln x)'=\frac{1}{x}\\ &amp;(\arcsin x)'=\frac{1}{\sqrt{1-x^2}} &amp;&amp;(\arccos x)'=-\frac{1}{\sqrt{1-x^2}}\\ &amp;(\arctan x)'=\frac{1}{1+x^2} &amp;&amp;(\operatorname{arccot} x)'=-\frac{1}{1+x^2} \end{aligned}$$</p>
 <h4 id="3-3-3-求导法则">3.3.3 求导法则</h4>
-<p>$$\begin{aligned} &amp;(u\pm v)‘=u’\pm v’\\ &amp;(uv)‘=u’v+uv’\\ &amp;\left(\frac{u}{v}\right)‘=\frac{u’v-uv’}{v^2}\qquad(v\neq0)\\ &amp;(Cu)‘=Cu’\\ &amp;\left(\frac{C}{v}\right)‘=-\frac{Cv’}{v^2}\qquad(C\text{ 为常数})\\ &amp;[f(g(x))]‘=f’(g(x)),g’(x)\qquad\text{（链式法则）}\end{aligned}$$</p>
+<p>$$\begin{aligned} &amp;(u\pm v)'=u'\pm v'\\ &amp;(uv)'=u'v+uv'\\ &amp;\left(\frac{u}{v}\right)'=\frac{u'v-uv'}{v^2}\qquad(v\neq0)\\ &amp;(Cu)'=Cu'\\ &amp;\left(\frac{C}{v}\right)'=-\frac{Cv'}{v^2}\qquad(C\text{ 为常数})\\ &amp;[f(g(x))]'=f'(g(x)),g'(x)\qquad\text{（链式法则）}\end{aligned}$$</p>
 <p>链式法则是反向传播的全部依据：复合函数的导数等于<strong>外层导数 × 内层导数</strong>，多层网络就是一层层乘下去。</p>
 <h1>4 偏导数</h1>
 <h3 id="4-0-引入">4.0 引入</h3>
@@ -612,8 +612,8 @@ $$y’\big|<em>{x=x_0},\qquad \frac{\mathrm{d}y}{\mathrm{d}x}\bigg|</em>{x=x_0},
 $$\begin{gathered}求f(x,y)=x^2+3xy+y^2在点(1,2)处的偏导数。\\ \\ f_x(x,y)=2x+3y \\ \\ f_y(x,y)=3x+2y \\ \\ f_x(1,2)=(2x+3y)|<em>{x=1 \\ y=2}=8 \\ \\ f_y(1,2)=(3x+2y)|</em>{x=1 \\ y=2}=7\end{gathered}$$</p>
 <h1>5 方向导数</h1>
 <h3 id="5-0-引入">5.0 引入</h3>
-<p>设有二元函数 $z=f(x,y)$，点 $P$ 沿方向 $L$ 到 $P’$，两点间距离与函数增量为</p>
-<p>$$|PP’|=\rho=\sqrt{(\Delta x)^2+(\Delta y)^2},\qquad \Delta z=f(x+\Delta x,y+\Delta y)-f(x,y)$$</p>
+<p>设有二元函数 $z=f(x,y)$，点 $P$ 沿方向 $L$ 到 $P'$，两点间距离与函数增量为</p>
+<p>$$|PP'|=\rho=\sqrt{(\Delta x)^2+(\Delta y)^2},\qquad \Delta z=f(x+\Delta x,y+\Delta y)-f(x,y)$$</p>
 <h3 id="5-1-定义">5.1 定义</h3>
 <p>如果函数的增量与这两点距离之比存在，则称此极限为在 $P$ 点沿着 $L$ 的方向导数：$$\frac{\partial f}{\partial l}=\lim_{\rho \to 0}\frac{f(x+\Delta x,y+\Delta y)-f(x,y)}{\rho}$$<br>
 函数 $f(x,y)$ 在 $X$ 轴正向 $\vec{e_1}={1,0}$、$Y$ 轴正向 $\vec{e_2}={0,1}$ 的方向导数分别为 $f_x$、$f_y$；负方向导数分别为 $-f_x$、$-f_y$。</p>
