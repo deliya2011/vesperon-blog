@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+
+  <!-- Baidu Tongji -->
+  
+
+  <!-- Baidu Push -->
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <!-- 作者的搜索引擎验证标签已移除：保留它们会让别人的 Google/百度账号能验证你的域名所有权 -->
+  <!-- 你自己要用时，把从 Search Console 拿到的 meta 贴在这里 -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="羽毛落处，皆是归处；于万千轻盈中，拾得其一。"/>
+  <meta name="keyword" content="Vesperon,blog"/>
+  <link rel="shortcut icon" href="/img/avatar/favicon.png"/>
+
+  
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      };
+    </script>
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://blog.vesperon.online/en/math-basics-notes/">
+  <title>
+    
+      Calculus Basics — Study Notes - Gathering Feathers
+    
+  </title>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<button class="toggle" type="button" aria-label="Toggle color theme" aria-pressed="false">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</button>
+<script>
+  function getCookieValue(name) {
+    var match = document.cookie.match('(^|[^;]+)\\s*' + name + '\\s*=\\s*([^;]+)');
+    return match ? match.pop() : '';
+  }
+
+  var savedTheme = getCookieValue('sb-color-mode');
+  if (savedTheme === 'dark' || savedTheme === 'light') {
+    document.body.classList.toggle('body--dark', savedTheme === 'dark');
+  }
+
+  var toggleBtn = document.querySelector('.toggle');
+  function updateThemeToggle() {
+    toggleBtn.setAttribute('aria-pressed', String(document.body.classList.contains('body--dark')));
+  }
+  updateThemeToggle();
+
+  toggleBtn.addEventListener('click', function () {
+    document.body.classList.toggle('body--dark');
+    var theme = document.body.classList.contains('body--dark') ? 'dark' : 'light';
+    var exp = new Date();
+    exp.setFullYear(exp.getFullYear() + 1);
+    document.cookie = 'sb-color-mode=' + theme + ';expires=' + exp.toUTCString() + ';path=/;SameSite=Lax';
+    updateThemeToggle();
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/en/">Vesperon</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/en/">HOME</a>
+          </li>
+
+          
+          
+          
+          
+          
+          <li>
+            <a href="/en/categories/">CATEGORIES</a>
+          </li>
+          
+          
+          
+          
+          <li>
+            <a href="/en/tags/">TAGS</a>
+          </li>
+          
+          
+          
+          
+          <li>
+            <a href="/en/archive/">ARCHIVES</a>
+          </li>
+          
+          
+          
+          
+          <li>
+            <a href="/about/">ABOUT</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>SEARCH</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          <!-- LangSelect start -->
+          <!-- LangSelect -->
+
+<li>
+  <a id="lang-select-label"><i class="fa fa-globe"></i>
+    <span>English</span>
+    <select id="lang-select">
+      
+      
+      <option value="en" data-href="" selected>
+        English
+      </option>
+      
+      
+      <option value="cn" data-href="/cn/math-basics-notes/">
+        简体中文
+      </option>
+      
+    </select>
+  </a>
+</li>
+
+          <!-- LangSelect end -->
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.45)), url('/img/header_img/sunshine-sea.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.45)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.56)), url('/img/header_img/archive_bg2.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.52)), url('/img/header_img/sunshine-sea.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.52)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.62)), url('/img/header_img/archive_bg2.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url(''); */
+      
+    }
+
+    
+  </style>
+
+
+<!-- Keep the wave edge flush with the header when the theme is served from a CDN. -->
+<style>
+  .preview-overlay .preview-waves {
+    display: block;
+    vertical-align: top;
+  }
+
+  a:focus:not(:focus-visible),
+  button:focus:not(:focus-visible) {
+    outline: none;
+  }
+</style>
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#AI" title="AI">AI</a>
+              
+              <a class="tag" href="/tags/#数学" title="数学">数学</a>
+              
+            </div>
+            <h1>Calculus Basics — Study Notes</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by Vesperon on
+              2026-11-24
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">18</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">3k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            
+            <span class="meta">
+              <img class="vc-badge" alt="article views"
+                   src="https://hits.sh/blog.vesperon.online/en/math-basics-notes.svg?label=Viewed&color=0085a1&style=flat-square">
+            </span>
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+<!-- 页面级背景构图微调：在页面 front-matter 里写 header-position 即可 -->
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <blockquote>
+<p>These notes are written by a human, with errata from ds.<br>
+No guarantee the author will still understand them later (lol).</p>
+</blockquote>
+<p>This is the first of 12 notes in the mathematics-for-machine-learning series. It will keep being updated; the main purpose is revision — so that my memory does not get so good that I forget.</p>
+<h1>0 Functions</h1>
+<p><s>Extremely basic — high-school, even middle-school material. Included only to keep the series complete.</s></p>
+<h3 id="0-1-Definition-of-a-function">0.1 Definition of a function</h3>
+<p>The relation between one quantity and another, e.g. $A=\pi r^2$.</p>
+<p>Common forms: $y=f(x)$, $y=\phi(x)$, etc.</p>
+<p>The value the function takes at $x_0$: $y_0=y|_{x=x_0}=f(x_0)$.</p>
+<h3 id="0-2-Several-kinds-of-function">0.2 Several kinds of function</h3>
+<h4 id="0-2-1-Piecewise-functions">0.2.1 Piecewise functions</h4>
+<p>$$
+f(x) =
+\begin{cases}
+\sqrt{x}, & x \ge 0 \\[4pt]
+-x, & x < 0
+\end{cases}
+$$</p>
+<p>Within different parts of the domain the correspondence is different, so the function is split into several pieces — hence “piecewise”.</p>
+<h3 id="0-2-2-Inverse-functions">0.2.2 Inverse functions</h3>
+<p>$$h(t)=\frac{1}{2}gt^2 \quad\Rightarrow\quad t(h)=\sqrt{\frac{2h}{g}}$$</p>
+<p>A function obtained by swapping the independent and dependent variables is called the inverse function.</p>
+<h4 id="0-2-3-Explicit-and-implicit-functions">0.2.3 Explicit and implicit functions</h4>
+<p><strong>Explicit function</strong>: the correspondence can be seen directly, e.g. $y=x^2+1$.</p>
+<p><strong>Implicit function</strong>: the correspondence cannot be seen directly, e.g. $F(x,y)=0$, $3x+y-4=0$.</p>
+<h3 id="0-3-Properties-of-functions">0.3 Properties of functions</h3>
+<h4 id="0-3-1-Parity">0.3.1 Parity</h4>
+<p><strong>Even function</strong>:<br>
+satisfies $f(-x)=f(x)$;<br>
+symmetric about the $y$-axis.</p>
+<p>Example: $$f(x)=x^2 \Rightarrow f(-x)=(-x)^2=x^2=f(x)$$</p>
+<p><strong>Odd function</strong>:<br>
+satisfies $f(-x)=-f(x)$;<br>
+symmetric about the origin.</p>
+<p>Example:<br>
+$$f(x)=x^3 \Rightarrow f(-x)=(-x)^3=-x^3=-f(x)$$</p>
+<h4 id="0-3-2-Periodicity">0.3.2 Periodicity</h4>
+<p>$$f(x+T) = f(x)$$</p>
+<p>Reading: the function repeats its behaviour over a fixed period $T$; we say it is periodic.</p>
+<h4 id="0-3-3-Monotonicity">0.3.3 Monotonicity</h4>
+<p><strong>Strictly increasing</strong>: take an increasing function $f(x)$; if $x_1>x_2$ then $f(x_1) > f(x_2)$.<br>
+<strong>Non-decreasing</strong>: take a non-decreasing function $g(x)$; if $x_1 > x_2$ then $g(x_1) \ge g(x_2)$.<br>
+<strong>Strictly decreasing</strong>: take a decreasing function $h(x)$; if $x_1>x_2$ then $h(x_1) < h(x_2)$.<br>
+<strong>Non-increasing</strong>: take a non-increasing function $l(x)$; if $x_1>x_2$ then $l(x_1) \le l(x_2)$.</p>
+<h1>1 Limits</h1>
+<h3 id="1-1-Sequences">1.1 Sequences</h3>
+<h4 id="1-1-1-Definition">1.1.1 Definition</h4>
+<p>A list of numbers arranged in order: $u_1,u_2,…,u_n,…$, where $u_n$ is called the general term.</p>
+<h4 id="1-1-2-Properties">1.1.2 Properties</h4>
+<p>For a sequence $\{u_n\}$: if, as $n$ grows without bound, the general term approaches a constant $A$, the sequence is said to have the limit $A$, or to <strong>converge</strong> to $A$; otherwise it is said to <strong>diverge</strong>.</p>
+<p>$$\begin{gathered}
+\lim_{n \to \infty} u_n = A\\ \text{or } u_n \to A \ (n \to \infty)
+\end{gathered}$$</p>
+<p>Other examples:</p>
+<p>$$\begin{gathered}
+\lim_{n \to \infty} \frac{1}{3^n} = 0\\
+\lim_{n \to \infty} \frac{n}{n+1} = 1\\
+\lim_{n \to \infty} 2^n \ \text{does not exist (diverges)}
+\end{gathered}$$</p>
+<h3 id="1-2-Limits">1.2 Limits</h3>
+<h4 id="1-2-1-Notation">1.2.1 Notation</h4>
+<p>$x \to \infty$ means “as $|x|$ grows without bound”.</p>
+<p>$x \to +\infty$ means “as $x$ grows without bound”.</p>
+<p>$x \to -\infty$ means “as $x$ decreases without bound”.</p>
+<p>$x \to x_0$ means “as $x$ approaches $x_0$ from both sides”.</p>
+<p>$x \to x_0^+$ means “as $x$ approaches $x_0$ from the right”.</p>
+<p>$x \to x_0^-$ means “as $x$ approaches $x_0$ from the left”.</p>
+<h4 id="1-2-2-Graphs-and-examples">1.2.2 Graphs and examples</h4>
+<p>$$\lim_{x \to +\infty} e^{-x}=0$$</p>
+<p><img src="screenshot_20261123_163435-region.png" alt="e to the power minus x approaching 0 as x grows"></p>
+<p>$$\lim_{x \to \infty} \frac{1}{x} = 0$$</p>
+<p><img src="screenshot_20261123_163944-region.png" alt="1/x approaching 0 as x tends to infinity"></p>
+<p>$$\lim_{x \to -\infty} \arctan x=-\frac{\pi}{2}$$</p>
+<p><img src="screenshot_20261123_164407-region.png" alt="arctan x approaching minus pi over 2 as x tends to minus infinity"></p>
+<h4 id="1-2-3-Related-definitions">1.2.3 Related definitions</h4>
+<p>The function is defined in a <strong>neighbourhood</strong> of $x_0$, and $\lim_{x \to x_0}f(x)=A$, or $f(x) \to A \ (x \to x_0)$.</p>
+<p>$$\lim_{x \to 1}\frac{x^2-1}{x-1}=\lim_{x \to 1} \frac{(x-1)(x+1)}{x-1}=2$$</p>
+<h4 id="1-2-4-One-sided-limits">1.2.4 One-sided limits</h4>
+<p>Right half-neighbourhood $(x_0,\ x_0+\delta)$; left half-neighbourhood $(x_0-\delta,\ x_0)$. Only when the function is defined on one of these neighbourhoods can we speak of the limit from that side.</p>
+<p>$$\begin{gathered}
+\lim_{x \to x_0^+} f(x) = A \quad\text{or}\quad f(x) \to A \ (x \to x_0^+) \quad\text{or}\quad f(x_0+0)=A\\
+\lim_{x \to x_0^-} f(x) = A \quad\text{or}\quad f(x) \to A \ (x \to x_0^-) \quad\text{or}\quad f(x_0-0)=A
+\end{gathered}$$</p>
+<h4 id="1-2-5-Properties">1.2.5 Properties</h4>
+<p>$$\lim_{x \to x_0} f(x)=A \quad\text{iff}\quad \lim_{x \to x_0^-}f(x)=\lim_{x \to x_0^+} f(x)=A$$</p>
+<p>Counter-example:</p>
+<p>$$f(x)=\begin{cases} x-1 &x<0, \\ 0 &x=0, \\ x+1 &x>0 \end{cases}$$</p>
+<p>The limit of $f(x)$ as $x \to 0$:</p>
+<p>Solution:</p>
+<p>$$\lim_{x \to 0^+} f(x) = \lim_{x \to 0^+}(x+1)=1$$</p>
+<p>$$\lim_{x \to 0^-} f(x) = \lim_{x \to 0^-}(x-1)=-1$$</p>
+<p>The left and right limits exist but are not equal, therefore $\lim_{x \to 0}f(x)$ does not exist.</p>
+<h1>2 Infinitesimals and infinities</h1>
+<h3 id="2-1-Infinitesimals">2.1 Infinitesimals</h3>
+<h4 id="2-1-1-Definition">2.1.1 Definition</h4>
+<p>Having zero as its limit.</p>
+<p>$\lim_{x \to \infty} \frac{1}{x}=0$, so $\frac{1}{x}$ is an infinitesimal as $x \to \infty$.</p>
+<p>$\lim_{x \to 2}(3x-6)=0$, so $3x-6$ is an infinitesimal as $x \to 2$.</p>
+<h4 id="2-1-2-Properties">2.1.2 Properties</h4>
+<ol>
+<li>The algebraic sum of <strong>finitely many</strong> infinitesimals is still an infinitesimal.</li>
+<li>The product of <strong>finitely many</strong> infinitesimals is still an infinitesimal.</li>
+<li>The product of a <strong>bounded</strong> variable and an infinitesimal is still an infinitesimal.</li>
+<li>The sum of infinitely many infinitesimals is <strong>not necessarily</strong> an infinitesimal. Example:</li>
+</ol>
+<p>$$\begin{gathered}
+\lim_{n \to \infty} (\frac{1}{n^2}+\frac{2}{n^2}+…+\frac{n}{n^2})\\
+=\lim_{n \to \infty} \frac{\frac{n(n+1)}{2}}{n^2}\\
+=\lim_{n \to \infty} \frac{n+1}{2n}\\
+=\frac{1}{2}
+\end{gathered}$$</p>
+<ol start="5">
+<li>The quotient of two infinitesimals is <strong>not necessarily</strong> an infinitesimal. Example:</li>
+</ol>
+<p>$$\lim_{x \to \infty} \frac{x}{2x} = \frac{1}{2},\quad \lim_{x \to 0} \frac{x^2}{2x}=0,\quad \lim_{x \to 0^+} \frac{2x}{x^2} = +\infty$$</p>
+<p>(The left limit is $-\infty$, so the quotient has no limit as $x\to0$.)</p>
+<h4 id="2-1-3-Relation-between-limits-and-infinitesimals">2.1.3 Relation between limits and infinitesimals</h4>
+<p>$$\lim_{x \to x_0}f(x)=A \quad\text{iff}\quad f(x)=A+\alpha(x),\ \text{where } \alpha(x) \text{ is an infinitesimal as } x \to x_0$$</p>
+<h4 id="2-1-4-Comparing-infinitesimals">2.1.4 Comparing infinitesimals</h4>
+<p>Let $\alpha=\alpha(x)$ and $\beta=\beta(x)$ both be infinitesimals:</p>
+<p>$$\lim_{x \to x_0}\alpha(x) = 0,\quad \lim_{x \to x_0} \beta(x)=0$$</p>
+<p>If $\lim_{x \to x_0}{\frac{\beta}{\alpha}}=0$, then $\beta$ is an infinitesimal of <strong>higher order</strong> than $\alpha$.</p>
+<p>If $\lim_{x \to x_0}{\frac{\beta}{\alpha}}=\infty$, then $\beta$ is an infinitesimal of <strong>lower order</strong> than $\alpha$.</p>
+<p>If $\lim_{x \to x_0}{\frac{\beta}{\alpha}}=C \not = 0$, then $\beta$ and $\alpha$ are infinitesimals of the <strong>same order</strong>.</p>
+<h3 id="2-2-Infinities">2.2 Infinities</h3>
+<h4 id="2-2-1-Definition">2.2.1 Definition</h4>
+<p><strong>Not a very large number</strong> — it is relative to the limiting process.</p>
+<p>$$\lim_{x \to x_0}f(x)=\infty \quad\text{or}\quad f(x) \to \infty \ (x \to x_0)$$</p>
+<h4 id="2-2-2-Relation-between-infinitesimals-and-infinities">2.2.2 Relation between infinitesimals and infinities</h4>
+<p>In the same limiting process of the independent variable, if $f(x)$ is infinite, then $\frac{1}{f(x)}$ is infinitesimal.</p>
+<h1>3 Continuity and derivatives</h1>
+<h3 id="3-1-Continuity-of-a-function">3.1 Continuity of a function</h3>
+<h4 id="3-1-1-Definition">3.1.1 Definition</h4>
+<p>Let $y=f(x)$ be defined in a neighbourhood of $x_0$. If, as the increment $\Delta x$ of the independent variable tends to zero, the corresponding increment $\Delta y$ also tends to zero, then $y=f(x)$ is said to be continuous at $x_0$.</p>
+<p>$$
+\lim_{\Delta x \to 0}\Delta y=\lim_{\Delta x \to 0}[f(x_0+\Delta x)-f(x_0)]=0
+$$</p>
+<h4 id="3-1-2-Conditions">3.1.2 Conditions</h4>
+<p>For $f(x)$ to be continuous at $x_0$:</p>
+<ol>
+<li>the function is defined at that point;</li>
+<li>the limit $\lim_{x \to x_0}f(x)$ exists;</li>
+<li>the limit equals the function value $f(x_0)$.</li>
+</ol>
+<p><strong>Example</strong>: is</p>
+<p>$$f(x) = \begin{cases}x+1 &x \le 0, \\ \frac{\sin x}{x} &x > 0 \end{cases}$$</p>
+<p>continuous at $x=0$?</p>
+<p>$$\begin{gathered}
+f(0)=1\\
+\lim_{x \to 0^-}f(x)=\lim_{x \to 0^-}(x+1)=1 \qquad \lim_{x \to 0}f(x)=1\\
+\lim_{x \to 0^+}f(x)=\lim_{x \to 0^+}\frac{\sin x}{x}=1 \qquad \lim_{x \to 0}f(x)=f(0)=1
+\end{gathered}$$</p>
+<h3 id="3-2-Discontinuities">3.2 Discontinuities</h3>
+<h4 id="3-2-1-Definition">3.2.1 Definition</h4>
+<p>If $f(x)$ is not continuous at $x=x_0$, then $x_0$ is called a point of discontinuity.</p>
+<h4 id="3-2-2-Conditions">3.2.2 Conditions</h4>
+<ol>
+<li>$f(x)$ is not defined at $x_0$;</li>
+<li>the limit $\lim_{x \to x_0} f(x)$ does not exist;</li>
+<li>the function is defined there and the limit exists, but $\lim_{x \to x_0} f(x) \neq f(x_0)$.</li>
+</ol>
+<h4 id="3-2-3-Types">3.2.3 Types</h4>
+<ul>
+<li>If both one-sided limits exist as $x \to x_0$, then $x_0$ is a discontinuity of the <strong>first kind</strong>; otherwise of the <strong>second kind</strong>.</li>
+<li>Jump discontinuity: $\lim_{x \to x_0^-}f(x)$ and $\lim_{x \to x_0^+}f(x)$ both exist but are unequal.</li>
+<li>Removable discontinuity: $\lim_{x \to x_0}f(x)$ exists but is not equal to $f(x_0)$ (or the point is undefined).</li>
+</ul>
+<p><strong>Example</strong>: is $f(x)=\frac{x^2-1}{x^2-3x+2}$ continuous?</p>
+<p>It is undefined at $x=2$ and $x=1$.</p>
+<p>$$\lim_{x \to 1^-}\frac{x^2-1}{x^2-3x+2}=\lim_{x \to 1^-}\frac{x+1}{x-2}=-2$$</p>
+<p>$$\lim_{x \to 1^+}\frac{x^2-1}{x^2-3x+2}=\lim_{x \to 1^+}\frac{x+1}{x-2}=-2$$</p>
+<p>So $x=1$ is a removable discontinuity.</p>
+<p>$$\lim_{x \to 2^-}f(x)=-\infty,\qquad \lim_{x \to 2^+}f(x)=+\infty$$</p>
+<p>So $x=2$ is a discontinuity of the second kind.</p>
+<h3 id="3-3-Derivatives">3.3 Derivatives</h3>
+<h4 id="3-3-1-Definition">3.3.1 Definition</h4>
+<p>If the limit of the average rate of change exists,</p>
+<p>$$\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x}=\lim_{\Delta x \to 0} \frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}$$</p>
+<p>then this limit is called the derivative of $y=f(x)$ at $x_0$, written</p>
+<p>$$y'\big|_{x=x_0},\qquad \frac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=x_0},\qquad \frac{\mathrm{d}f(x)}{\mathrm{d}x}\bigg|_{x=x_0}$$</p>
+<h4 id="3-3-2-Basic-derivative-formulas">3.3.2 Basic derivative formulas</h4>
+<p>$$
+\begin{aligned}
+&(C)'=0 &&(x^{\mu})'=\mu x^{\mu-1}\\
+&(\sin x)'=\cos x &&(\cos x)'=-\sin x\\
+&(\tan x)'=\sec^2 x &&(\cot x)'=-\csc^2 x\\
+&(\sec x)'=\sec x\tan x &&(\csc x)'=-\csc x\cot x\\
+&(a^x)'=a^x\ln a &&(e^x)'=e^x\\
+&(\log_a x)'=\frac{1}{x\ln a} &&(\ln x)'=\frac{1}{x}\\
+&(\arcsin x)'=\frac{1}{\sqrt{1-x^2}} &&(\arccos x)'=-\frac{1}{\sqrt{1-x^2}}\\
+&(\arctan x)'=\frac{1}{1+x^2} &&(\operatorname{arccot} x)'=-\frac{1}{1+x^2}
+\end{aligned}
+$$</p>
+<h4 id="3-3-3-Differentiation-rules">3.3.3 Differentiation rules</h4>
+<p>$$
+\begin{aligned}
+&(u\pm v)'=u'\pm v'\\
+&(uv)'=u'v+uv'\\
+&\left(\frac{u}{v}\right)'=\frac{u'v-uv'}{v^2}\qquad(v\neq0)\\
+&(Cu)'=Cu'\\
+&\left(\frac{C}{v}\right)'=-\frac{Cv'}{v^2}\qquad(C\text{ is constant})\\
+&[f(g(x))]'=f'(g(x))\,g'(x)\qquad\text{(chain rule)}
+\end{aligned}
+$$</p>
+<p>The chain rule is the whole basis of backpropagation: the derivative of a composition is the <strong>outer derivative × inner derivative</strong>, and a multi-layer network just keeps multiplying, layer after layer.</p>
+<h1>4 Partial derivatives</h1>
+<h3 id="4-0-Motivation">4.0 Motivation</h3>
+<ul>
+<li>For a function of one variable, $y=f(x)$, only the change of $y$ with respect to $x$ exists.</li>
+<li>A function of two variables $z=f(x,y)$ has a rate of change of $z$ with respect to $x$, one with respect to $y$, and one when $x$ and $y$ change together.</li>
+</ul>
+<h3 id="4-1-Definition">4.1 Definition</h3>
+<p>Let $z=f(x,y)$ be defined in a neighbourhood of $(x_0,y_0)$, and suppose the one-variable function $f(x,y_0)$ is differentiable at $x=x_0$, that is, the limit</p>
+<p>$$\lim_{\Delta x \to 0}\frac{f(x_0+\Delta x,y_0)-f(x_0,y_0)}{\Delta x}=A$$</p>
+<p>exists. Then $A$ is called the partial derivative of $z=f(x,y)$ with respect to $x$ at $(x_0,y_0)$, written $f_x(x_0,y_0)$, or</p>
+<p>$$
+\frac{\partial z}{\partial x}\bigg|_{x=x_0,\;y=y_0},\qquad
+\frac{\partial f}{\partial x}\bigg|_{x=x_0,\;y=y_0},\qquad
+z_x\bigg|_{x=x_0,\;y=y_0}
+$$</p>
+<h3 id="4-2-Geometric-meaning">4.2 Geometric meaning</h3>
+<p>Differentiate with respect to $x$:</p>
+<p>$$\begin{gathered}\frac{\partial f}{\partial x}\bigg|_{\substack{x=x_0\\ y=y_0}}
+=\frac{\mathrm{d}}{\mathrm{d}x}f(x,y_0)\bigg|_{x=x_0}\end{gathered}$$</p>
+<p>It is the <strong>slope with respect to the $x$-axis</strong> of the tangent $M_0T_x$ at $M_0$ to the <strong>curve of intersection</strong> of the surface $z=f(x,y)$ with the plane $y=y_0$.</p>
+<p>The same for the partial derivative with respect to $y$:</p>
+<p>$$\begin{gathered}\frac{\partial f}{\partial y}\bigg|_{\substack{x=x_0\\ y=y_0}}
+=\frac{\mathrm{d}}{\mathrm{d}y}f(x_0,y)\bigg|_{y=y_0}\end{gathered}$$</p>
+<p>It is the slope with respect to the $y$-axis of the tangent $M_0T_y$ at $M_0$ to the intersection of the surface with the plane $x=x_0$.</p>
+<p><img src="partial-derivative-geometry.png" alt="Geometric meaning of partial derivatives: at a point M0 on the surface z=f(x,y), a plane parallel to the x-axis (y=y0) cuts out a curve whose tangent slope relative to the x-axis is the partial derivative with respect to x; a plane parallel to the y-axis (x=x0) cuts out another curve whose tangent slope is the partial derivative with respect to y"></p>
+<p><strong>Example</strong>: find the partial derivatives of $f(x,y)=x^2+3xy+y^2$ at $(1,2)$.</p>
+<p>$$\begin{gathered}
+f_x(x,y)=2x+3y\\
+f_y(x,y)=3x+2y\\
+f_x(1,2)=(2x+3y)|_{x=1,\;y=2}=8\\
+f_y(1,2)=(3x+2y)|_{x=1,\;y=2}=7
+\end{gathered}$$</p>
+<h1>5 Directional derivatives</h1>
+<h3 id="5-0-Motivation">5.0 Motivation</h3>
+<p>Take a function of two variables $z=f(x,y)$, and let the point $P$ move along a direction $L$ to $P'$. The distance between the two points and the increment of the function are</p>
+<p>$$\begin{gathered}
+|PP'|=\rho =\sqrt{(\Delta x)^2+(\Delta y)^2}\\
+\Delta z=f(x+\Delta x,y+\Delta y)-f(x,y)
+\end{gathered}$$</p>
+<h3 id="5-1-Definition">5.1 Definition</h3>
+<p>If the ratio of the increment of the function to the distance between the two points has a limit, that limit is called the directional derivative at $P$ along $L$:</p>
+<p>$$\frac{\partial f}{\partial l}=\lim_{\rho \to 0}\frac{f(x+\Delta x,y+\Delta y)-f(x,y)}{\rho}$$</p>
+<p>For the function $f(x,y)$, the directional derivatives along the positive $X$-axis $\vec{e_1}=\{1,0\}$ and the positive $Y$-axis $\vec{e_2}=\{0,1\}$ are $f_x$ and $f_y$ respectively; the derivatives along the negative directions are $-f_x$ and $-f_y$.</p>
+<h3 id="5-2-Theorem">5.2 Theorem</h3>
+<p>If $z=f(x,y)$ is differentiable at $P(x,y)$, then the directional derivative at that point exists along any direction $L$.</p>
+<p>$$
+\frac{\partial f}{\partial l}=\frac{\partial f}{\partial x}\cos \phi +\frac{\partial f}{\partial y}\sin \phi
+$$</p>
+<p>where $\phi$ is the angle from the $X$-axis to $L$.</p>
+<p><strong>Example</strong>: find the directional derivative of $z=xe^{2y}$ at $P(1,0)$ along the direction from $P(1,0)$ to $Q(2,-1)$.</p>
+<p>Solution: the direction $\vec{l}$ here is $\overrightarrow{PQ}=\{1,-1\}$, so the angle from the $x$-axis to $\vec{l}$ is $\phi=-\frac{\pi}{4}$.</p>
+<p>$$
+\because\quad \frac{\partial z}{\partial x}\bigg|_{(1,0)}=e^{2y}\bigg|_{(1,0)}=1;
+\qquad \frac{\partial z}{\partial y}\bigg|_{(1,0)}=2xe^{2y}\bigg|_{(1,0)}=2
+$$</p>
+<p>So the directional derivative is</p>
+<p>$$
+\frac{\partial z}{\partial l}=\cos\left(-\frac{\pi}{4}\right)+2\sin\left(-\frac{\pi}{4}\right)=-\frac{\sqrt{2}}{2}
+$$</p>
+<h1>6 Gradient</h1>
+<h3 id="6-1-Definition">6.1 Definition</h3>
+<p>Let $z=f(x,y)$ have continuous first partial derivatives in a plane region. For every point $P(x,y)$ in it there is a vector</p>
+<p>$$
+\frac{\partial f}{\partial x}\vec{\boldsymbol{i}}
++\frac{\partial f}{\partial y}\vec{\boldsymbol{j}}
+$$</p>
+<p>which is called the gradient of the function at $P$:</p>
+<p>$$
+\operatorname{grad} f(x,y)
+=\frac{\partial f}{\partial x}\vec{\boldsymbol{i}}
++\frac{\partial f}{\partial y}\vec{\boldsymbol{j}}
+$$</p>
+<p>With $\vec{e}=\cos\varphi\,\vec{\boldsymbol{i}}+\sin\varphi\,\vec{\boldsymbol{j}}$ the unit vector of the direction $L$:</p>
+<p>$$
+\begin{aligned}
+\frac{\partial f}{\partial l}
+&=\frac{\partial f}{\partial x}\cos\varphi
+ +\frac{\partial f}{\partial y}\sin\varphi \\[4pt]
+&=\left\{\frac{\partial f}{\partial x},\frac{\partial f}{\partial y}\right\}
+  \cdot\{\cos\varphi,\sin\varphi\} \\[4pt]
+&=\operatorname{grad} f(x,y)\cdot\vec{e}
+ =\left|\operatorname{grad} f(x,y)\right|\cos\theta,
+ \qquad \theta=\left(\operatorname{grad} f(x,y),\vec{e}\right)
+\end{aligned}
+$$</p>
+<h3 id="6-2-Properties">6.2 Properties</h3>
+<ul>
+<li>Only when $\cos\!\left(\operatorname{grad} f(x,y),\vec{e}\right)=1$ does $\dfrac{\partial f}{\partial l}$ reach its maximum.</li>
+<li>The gradient at a point is a vector whose direction is the direction in which the directional derivative is largest; its magnitude is exactly that largest directional derivative.</li>
+<li>The gradient is the normal vector of the level curve (contour line).</li>
+</ul>
+<p><strong>Example</strong>: let $u=xyz+z^{2}+5$. Find $\operatorname{grad} u$, and the maximum (minimum) value of the directional derivative at $M(0,1,-1)$.</p>
+<p>$$
+\because\quad
+\frac{\partial u}{\partial x}=yz,\qquad
+\frac{\partial u}{\partial y}=xz,\qquad
+\frac{\partial u}{\partial z}=xy+2z,
+$$</p>
+<p>$$
+\begin{aligned}
+\therefore\quad
+\operatorname{grad} u\Big|_{(0,1,-1)}
+&=\left.(yz,\ xz,\ xy+2z)\right|_{(0,1,-1)} \\[4pt]
+&=(-1,\ 0,\ -2)
+\end{aligned}
+$$</p>
+<p>$$
+\text{Hence}\qquad
+\max\left\{\left.\frac{\partial u}{\partial l}\right|_{M}\right\}
+=\left\|\operatorname{grad} u\right\|=\sqrt{5}
+$$</p>
+<p>$$
+\min\left\{\left.\frac{\partial u}{\partial l}\right|_{M}\right\}
+=-\left\|\operatorname{grad} u\right\|=-\sqrt{5}
+$$</p>
+
+
+        <hr>
+        <!-- Pager -->
+        
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/en/gxyz-1029-div2-t2/" data-toggle="tooltip" data-placement="top" title="GXYZ 10.29 Div2 T2 — AI School Bus">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" rel="noopener noreferrer" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" rel="noopener noreferrer" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" rel="noopener noreferrer" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" rel="noopener noreferrer" class="social-share-icon" href="mailto:?subject=Calculus Basics — Study Notes&body=Hi,I found this website and thought you might like it https://blog.vesperon.online/en/math-basics-notes/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 0. utterances（GitHub Issues，无需服务端 / 无密钥） -->
+
+  <!-- utterances start -->
+  <div class="utterances-wrap">
+    <script src="https://utteranc.es/client.js"
+      repo="deliya2011/vesperon-blog"
+      issue-term="pathname"
+      label="comment"
+      theme="github-dark"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </div>
+  <script>
+    // 跟随站点明暗切换同步评论框主题
+    (function () {
+      function themeName() {
+        return document.body.classList.contains('body--dark') ? 'github-dark' : 'github-light';
+      }
+      function syncTheme() {
+        var f = document.querySelector('iframe.utterances-frame');
+        if (f && f.contentWindow) {
+          f.contentWindow.postMessage({ type: 'set-theme', theme: themeName() }, 'https://utteranc.es');
+        }
+      }
+      document.addEventListener('DOMContentLoaded', function () {
+        var btn = document.querySelector('.toggle');
+        if (btn) btn.addEventListener('click', function () { setTimeout(syncTheme, 60); });
+      });
+    }());
+  </script>
+  <!-- utterances end -->
+
+
+<!-- 1. gitalk comment -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#AI" title="AI">AI</a>
+            
+            <a class="tag" href="/tags/#数学" title="数学">数学</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>FRIENDS</h5>
+        <ul class="list-inline friend-links">
+
+          
+          <li>
+            <a href="https://blog.qaaxaap.living/zh/" target="_blank">Qaaxaap</a>
+          </li>
+          
+          <li>
+            <a href="https://pulsar33550336.github.io/" target="_blank">Pulsar</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" rel="noopener noreferrer" href="https://github.com/deliya2011">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Vesperon
+          2026
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://blog.vesperon.online/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="SEARCH..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res || !localStorage.getItem('searchJson')) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json']);
+          },
+          error: function (e) {
+            console.error('Unable to load the local search index.', e);
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var storedSearchData = localStorage.getItem('searchJson');
+      if (!storedSearchData) {
+        resultContent.innerHTML = '<div id="no-result">Loading search index…</div>';
+        proceedsearch();
+        return;
+      }
+
+      var datas;
+      try {
+        datas = JSON.parse(storedSearchData);
+      } catch (error) {
+        localStorage.removeItem('searchJson');
+        resultContent.innerHTML = '<div id="no-result">Search index could not be loaded. Please try again.</div>';
+        proceedsearch();
+        return;
+      }
+      if (!Array.isArray(datas)) {
+        resultContent.innerHTML = '<div id="no-result">Search index is unavailable.</div>';
+        proceedsearch();
+        return;
+      }
+      isfetched = true;
+
+      function escapeHtml(value) {
+        return String(value).replace(/[&<>'"]/g, function (character) {
+          return ({'&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'})[character];
+        });
+      }
+
+      function safeUrl(value) {
+        try {
+          var url = decodeURIComponent(value || '');
+          return /^(?:https?:)?\/\//i.test(url) || /^(?:\/|\.\/|\.\.\/)/.test(url) ? url : '#';
+        } catch (error) {
+          return '#';
+        }
+      }
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = safeUrl(data.url);
+
+            var date = data.date || '';
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += escapeHtml(text.substring(prevEnd, hit.position));
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + escapeHtml(text.substring(hit.position, end)) + '</b>';
+                  prevEnd = end;
+                });
+                result += escapeHtml(text.substring(prevEnd, slice.end));
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' rel='noopener noreferrer' href='" + escapeHtml(articleUrl) + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + escapeHtml(dateTime) + "</time>";
+              } else {
+                resultItem += "<a target='_blank' rel='noopener noreferrer' href='" + escapeHtml(articleUrl) + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + escapeHtml(title) + "</div><time class='search-result-date'>" + escapeHtml(dateTime) + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + escapeHtml(safeUrl(imgUrl)) + "' width='64' height='48' alt=''></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	</body>
+</html>
