@@ -472,8 +472,8 @@ No guarantee the author will still understand them later (lol).</p>
 <p>$$
 f(x) =
 \begin{cases}
-\sqrt{x}, & x \ge 0 \\[4pt]
--x, & x < 0
+\sqrt{x}, &amp; x \ge 0 \\[4pt]
+-x, &amp; x &lt; 0
 \end{cases}
 $$</p>
 <p>Within different parts of the domain the correspondence is different, so the function is split into several pieces — hence “piecewise”.</p>
@@ -498,10 +498,10 @@ $$f(x)=x^3 \Rightarrow f(-x)=(-x)^3=-x^3=-f(x)$$</p>
 <p>$$f(x+T) = f(x)$$</p>
 <p>Reading: the function repeats its behaviour over a fixed period $T$; we say it is periodic.</p>
 <h4 id="0-3-3-Monotonicity">0.3.3 Monotonicity</h4>
-<p><strong>Strictly increasing</strong>: take an increasing function $f(x)$; if $x_1>x_2$ then $f(x_1) > f(x_2)$.<br>
-<strong>Non-decreasing</strong>: take a non-decreasing function $g(x)$; if $x_1 > x_2$ then $g(x_1) \ge g(x_2)$.<br>
-<strong>Strictly decreasing</strong>: take a decreasing function $h(x)$; if $x_1>x_2$ then $h(x_1) < h(x_2)$.<br>
-<strong>Non-increasing</strong>: take a non-increasing function $l(x)$; if $x_1>x_2$ then $l(x_1) \le l(x_2)$.</p>
+<p><strong>Strictly increasing</strong>: take an increasing function $f(x)$; if $x_1&gt;x_2$ then $f(x_1) &gt; f(x_2)$.<br>
+<strong>Non-decreasing</strong>: take a non-decreasing function $g(x)$; if $x_1 &gt; x_2$ then $g(x_1) \ge g(x_2)$.<br>
+<strong>Strictly decreasing</strong>: take a decreasing function $h(x)$; if $x_1&gt;x_2$ then $h(x_1) &lt; h(x_2)$.<br>
+<strong>Non-increasing</strong>: take a non-increasing function $l(x)$; if $x_1&gt;x_2$ then $l(x_1) \le l(x_2)$.</p>
 <h1>1 Limits</h1>
 <h3 id="1-1-Sequences">1.1 Sequences</h3>
 <h4 id="1-1-1-Definition">1.1.1 Definition</h4>
@@ -544,7 +544,7 @@ $$f(x)=x^3 \Rightarrow f(-x)=(-x)^3=-x^3=-f(x)$$</p>
 <h4 id="1-2-5-Properties">1.2.5 Properties</h4>
 <p>$$\lim_{x \to x_0} f(x)=A \quad\text{iff}\quad \lim_{x \to x_0^-}f(x)=\lim_{x \to x_0^+} f(x)=A$$</p>
 <p>Counter-example:</p>
-<p>$$f(x)=\begin{cases} x-1 &x<0, \\ 0 &x=0, \\ x+1 &x>0 \end{cases}$$</p>
+<p>$$f(x)=\begin{cases} x-1 &amp;x&lt;0, \\ 0 &amp;x=0, \\ x+1 &amp;x&gt;0 \end{cases}$$</p>
 <p>The limit of $f(x)$ as $x \to 0$:</p>
 <p>Solution:</p>
 <p>$$\lim_{x \to 0^+} f(x) = \lim_{x \to 0^+}(x+1)=1$$</p>
@@ -603,7 +603,7 @@ $$</p>
 <li>the limit equals the function value $f(x_0)$.</li>
 </ol>
 <p><strong>Example</strong>: is</p>
-<p>$$f(x) = \begin{cases}x+1 &x \le 0, \\ \frac{\sin x}{x} &x > 0 \end{cases}$$</p>
+<p>$$f(x) = \begin{cases}x+1 &amp;x \le 0, \\ \frac{\sin x}{x} &amp;x &gt; 0 \end{cases}$$</p>
 <p>continuous at $x=0$?</p>
 <p>$$\begin{gathered}
 f(0)=1\\
@@ -641,25 +641,25 @@ f(0)=1\\
 <h4 id="3-3-2-Basic-derivative-formulas">3.3.2 Basic derivative formulas</h4>
 <p>$$
 \begin{aligned}
-&(C)'=0 &&(x^{\mu})'=\mu x^{\mu-1}\\
-&(\sin x)'=\cos x &&(\cos x)'=-\sin x\\
-&(\tan x)'=\sec^2 x &&(\cot x)'=-\csc^2 x\\
-&(\sec x)'=\sec x\tan x &&(\csc x)'=-\csc x\cot x\\
-&(a^x)'=a^x\ln a &&(e^x)'=e^x\\
-&(\log_a x)'=\frac{1}{x\ln a} &&(\ln x)'=\frac{1}{x}\\
-&(\arcsin x)'=\frac{1}{\sqrt{1-x^2}} &&(\arccos x)'=-\frac{1}{\sqrt{1-x^2}}\\
-&(\arctan x)'=\frac{1}{1+x^2} &&(\operatorname{arccot} x)'=-\frac{1}{1+x^2}
+&amp;(C)'=0 &amp;&amp;(x^{\mu})'=\mu x^{\mu-1}\\
+&amp;(\sin x)'=\cos x &amp;&amp;(\cos x)'=-\sin x\\
+&amp;(\tan x)'=\sec^2 x &amp;&amp;(\cot x)'=-\csc^2 x\\
+&amp;(\sec x)'=\sec x\tan x &amp;&amp;(\csc x)'=-\csc x\cot x\\
+&amp;(a^x)'=a^x\ln a &amp;&amp;(e^x)'=e^x\\
+&amp;(\log_a x)'=\frac{1}{x\ln a} &amp;&amp;(\ln x)'=\frac{1}{x}\\
+&amp;(\arcsin x)'=\frac{1}{\sqrt{1-x^2}} &amp;&amp;(\arccos x)'=-\frac{1}{\sqrt{1-x^2}}\\
+&amp;(\arctan x)'=\frac{1}{1+x^2} &amp;&amp;(\operatorname{arccot} x)'=-\frac{1}{1+x^2}
 \end{aligned}
 $$</p>
 <h4 id="3-3-3-Differentiation-rules">3.3.3 Differentiation rules</h4>
 <p>$$
 \begin{aligned}
-&(u\pm v)'=u'\pm v'\\
-&(uv)'=u'v+uv'\\
-&\left(\frac{u}{v}\right)'=\frac{u'v-uv'}{v^2}\qquad(v\neq0)\\
-&(Cu)'=Cu'\\
-&\left(\frac{C}{v}\right)'=-\frac{Cv'}{v^2}\qquad(C\text{ is constant})\\
-&[f(g(x))]'=f'(g(x))\,g'(x)\qquad\text{(chain rule)}
+&amp;(u\pm v)'=u'\pm v'\\
+&amp;(uv)'=u'v+uv'\\
+&amp;\left(\frac{u}{v}\right)'=\frac{u'v-uv'}{v^2}\qquad(v\neq0)\\
+&amp;(Cu)'=Cu'\\
+&amp;\left(\frac{C}{v}\right)'=-\frac{Cv'}{v^2}\qquad(C\text{ is constant})\\
+&amp;[f(g(x))]'=f'(g(x))\,g'(x)\qquad\text{(chain rule)}
 \end{aligned}
 $$</p>
 <p>The chain rule is the whole basis of backpropagation: the derivative of a composition is the <strong>outer derivative × inner derivative</strong>, and a multi-layer network just keeps multiplying, layer after layer.</p>
@@ -739,11 +739,11 @@ $$</p>
 <p>$$
 \begin{aligned}
 \frac{\partial f}{\partial l}
-&=\frac{\partial f}{\partial x}\cos\varphi
+&amp;=\frac{\partial f}{\partial x}\cos\varphi
  +\frac{\partial f}{\partial y}\sin\varphi \\[4pt]
-&=\left\{\frac{\partial f}{\partial x},\frac{\partial f}{\partial y}\right\}
+&amp;=\left\{\frac{\partial f}{\partial x},\frac{\partial f}{\partial y}\right\}
   \cdot\{\cos\varphi,\sin\varphi\} \\[4pt]
-&=\operatorname{grad} f(x,y)\cdot\vec{e}
+&amp;=\operatorname{grad} f(x,y)\cdot\vec{e}
  =\left|\operatorname{grad} f(x,y)\right|\cos\theta,
  \qquad \theta=\left(\operatorname{grad} f(x,y),\vec{e}\right)
 \end{aligned}
@@ -765,8 +765,8 @@ $$</p>
 \begin{aligned}
 \therefore\quad
 \operatorname{grad} u\Big|_{(0,1,-1)}
-&=\left.(yz,\ xz,\ xy+2z)\right|_{(0,1,-1)} \\[4pt]
-&=(-1,\ 0,\ -2)
+&amp;=\left.(yz,\ xz,\ xy+2z)\right|_{(0,1,-1)} \\[4pt]
+&amp;=(-1,\ 0,\ -2)
 \end{aligned}
 $$</p>
 <p>$$

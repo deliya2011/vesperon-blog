@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+
+  <!-- Baidu Tongji -->
+  
+
+  <!-- Baidu Push -->
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <!-- 作者的搜索引擎验证标签已移除：保留它们会让别人的 Google/百度账号能验证你的域名所有权 -->
+  <!-- 你自己要用时，把从 Search Console 拿到的 meta 贴在这里 -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="羽毛落处，皆是归处；于万千轻盈中，拾得其一。"/>
+  <meta name="keyword" content="Vesperon,blog"/>
+  <link rel="shortcut icon" href="/img/avatar/favicon.png"/>
+
+  
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      };
+    </script>
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://blog.vesperon.online/cn/calculus-notes/">
+  <title>
+    
+      【微积分】学习笔记 - Gathering Feathers
+    
+  </title>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<button class="toggle" type="button" aria-label="Toggle color theme" aria-pressed="false">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</button>
+<script>
+  function getCookieValue(name) {
+    var match = document.cookie.match('(^|[^;]+)\\s*' + name + '\\s*=\\s*([^;]+)');
+    return match ? match.pop() : '';
+  }
+
+  var savedTheme = getCookieValue('sb-color-mode');
+  if (savedTheme === 'dark' || savedTheme === 'light') {
+    document.body.classList.toggle('body--dark', savedTheme === 'dark');
+  }
+
+  var toggleBtn = document.querySelector('.toggle');
+  function updateThemeToggle() {
+    toggleBtn.setAttribute('aria-pressed', String(document.body.classList.contains('body--dark')));
+  }
+  updateThemeToggle();
+
+  toggleBtn.addEventListener('click', function () {
+    document.body.classList.toggle('body--dark');
+    var theme = document.body.classList.contains('body--dark') ? 'dark' : 'light';
+    var exp = new Date();
+    exp.setFullYear(exp.getFullYear() + 1);
+    document.cookie = 'sb-color-mode=' + theme + ';expires=' + exp.toUTCString() + ';path=/;SameSite=Lax';
+    updateThemeToggle();
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Vesperon</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          
+          
+          
+          <li>
+            <a href="/categories/">分类</a>
+          </li>
+          
+          
+          
+          
+          <li>
+            <a href="/tags/">标签</a>
+          </li>
+          
+          
+          
+          
+          <li>
+            <a href="/archive/">归档</a>
+          </li>
+          
+          
+          
+          
+          <li>
+            <a href="/about/">关于</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.45)), url('/img/header_img/sunshine-sea.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.45)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.56)), url('/img/header_img/archive_bg2.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.52)), url('/img/header_img/sunshine-sea.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.52)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.62)), url('/img/header_img/archive_bg2.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url(''); */
+      
+    }
+
+    
+  </style>
+
+
+<!-- Keep the wave edge flush with the header when the theme is served from a CDN. -->
+<style>
+  .preview-overlay .preview-waves {
+    display: block;
+    vertical-align: top;
+  }
+
+  a:focus:not(:focus-visible),
+  button:focus:not(:focus-visible) {
+    outline: none;
+  }
+</style>
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#AI" title="AI">AI</a>
+              
+              <a class="tag" href="/tags/#数学" title="数学">数学</a>
+              
+            </div>
+            <h1>【微积分】学习笔记</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by Vesperon on
+              2026-11-27
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">60</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">2.6k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            
+            <span class="meta">
+              <img class="vc-badge" alt="article views"
+                   src="https://hits.sh/blog.vesperon.online/cn/calculus-notes.svg?label=Viewed&color=0085a1&style=flat-square">
+            </span>
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+<!-- 页面级背景构图微调：在页面 front-matter 里写 header-position 即可 -->
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1>0 引言</h1>
+<h3 id="0-1-起源">0.1 起源</h3>
+<p>微积分诞生于17世纪，主要帮助人们解决各种速度，面积等实际问题</p>
+<h3 id="0-2-基本思想">0.2 基本思想</h3>
+<ul>
+<li>以直代曲，对于矩形，我们可以轻松求得其面积，能否用矩形代替曲线形状呢？</li>
+<li>应该用多少个矩形来代替呢？</li>
+</ul>
+<h1>1 微积分的解释</h1>
+<h3 id="1-1-面积由来">1.1 面积由来</h3>
+<ul>
+<li>在区间 $[a,b]$ 之间插入若干个点，这样就得到了 $n$ 个小区间</li>
+<li>每一个小矩形面积为:$A_i=f(\xi_i)\Delta x_i$,近似得到曲线面积：$A\approx \sum_{i=1}^n f(\xi_i)\Delta x_i$</li>
+<li>当分割无限加细，每个小区间的最大长度为$\lambda$，此时$\lambda \to 0$</li>
+<li>曲边面积：$A=\lim_{\lambda \to 0}\sum_{i=1}^n f(\xi_i) \Delta x_i$<br>
+<img src="calc-20261126175355.png" alt="把区间 [a,b] 切成 n 个小矩形近似曲边梯形面积"></li>
+</ul>
+<h3 id="1-2-从求和出发">1.2 从求和出发</h3>
+<ul>
+<li>尽可能的将每一个矩形的底边无穷小</li>
+<li>莱布尼兹为了体现求和的感觉，给S拉长了，简写成$\int_{a}^{b} f(x)\,dx$<br>
+<img src="calc-20261126181304.png" alt="莱布尼兹把 Sum 的首字母拉长成积分号"></li>
+</ul>
+<p>即：把 <em>Sum</em> 的首字母 S 拉长成 $\int$，求和号就变成了积分号。</p>
+<h3 id="1-3-切线的解释">1.3 切线的解释</h3>
+<ul>
+<li>切线的斜率是什么？<br>
+<strong>例子</strong>：$dy,dx$组成的微分直角三角形，其斜边就是切线，切线的斜率即为导数，所以$f'(x)=\frac{dy}{dx}$，所以$dy=f'(x)dx$</li>
+<li>由于无穷小的概念，dx，dy都叫做微分，所谓微积分就是把这些微分积起来。</li>
+</ul>
+<h3 id="1-4-微分">1.4 微分</h3>
+<p><img src="calc-20261127021158.png" alt="dy 与 dx 构成的微分三角形"></p>
+<p>$$\lim_{\Delta x \to 0}dy=0,\lim_{\Delta x \to 0}dx=0$$</p>
+<h1>2 定积分</h1>
+<h3 id="2-1-定义">2.1 定义</h3>
+<p>当$\| \Delta x \| \to 0$时，总和S总是趋于确定的极限$I$，则称极限 $I$ 为函数 $f(x)$ 在区间 $[a,b]$ 上的定积分<br>
+<img src="calc-20261127022928.png" alt="定积分的黎曼和与极限"></p>
+<h3 id="2-2-性质">2.2 性质</h3>
+<ul>
+<li>定积分的值只与被积函数和积分区间 $[a,b]$ 有关，与积分变量的字母无关。<br>
+$$
+\int_a^bf(x)dx=\int_a^bf(t)dt=\int_a^bf(u)du
+$$</li>
+<li>当函数$f(x)$在区间$[a,b]$上的定积分存在的时候，称$f(x)$在区间$[a,b]$上<strong>可积</strong></li>
+<li>充分条件：闭区间上<strong>连续</strong>的函数一定可积；有有限个第一类间断点的有界函数也可积</li>
+</ul>
+<h3 id="2-3-利用定义计算定积分">2.3 利用定义计算定积分</h3>
+<p><strong>例子：</strong> 计算定积分$\int_0^1x^2dx$<br>
+将 $[0,1]$ $n$ 等分，分点为 $x_i=\frac{i}{n}\ (i=1,2,…,n)$；小区间 $[x_{i-1},x_i]$ 的长度 $\Delta x_i = \frac{1}{n}$；取 $\xi_i=x_i$。</p>
+<p>$$
+\sum_{i=1}^nf(\xi_i)\Delta x_i=\sum_{i=1}^n\xi_i^2\Delta x_i=\sum_{i=1}^nx_i^2\Delta x_i
+=\sum_{i=1}^n\left(\frac{i}{n}\right)^2 \cdot \frac{1}{n^3}
+=\frac{1}{n^3}\sum_{i=1}^ni^2=\frac{1}{n^3} \cdot \frac{n(n+1)(2n+1)}{6}
+$$</p>
+<p>$$
+=\frac{1}{6}\left(1+\frac{1}{n}\right)\left(2+\frac{1}{n}\right)
+$$</p>
+<p>由 $\| \Delta x \| \to 0 \Rightarrow n \to \infty$：</p>
+<p>$$
+\int_0^1x^2dx=\lim_{\lambda \to 0}\sum_{i=1}^n\xi_i^2\Delta x_i
+=\lim_{n \to \infty}\frac{1}{6}\left(1+\frac{1}{n}\right)\left(2+\frac{1}{n}\right)=\frac{1}{3}
+$$</p>
+<h1>3 定积分的性质</h1>
+<h3 id="3-1-基本性质">3.1 基本性质</h3>
+<p>线性性质：</p>
+<p>$$\int_a^b \bigl[f(x)\pm g(x)\bigr]\,dx = \int_a^b f(x)\,dx \pm \int_a^b g(x)\,dx$$</p>
+<p>$$\int_a^b k f(x)\,dx = k\int_a^b f(x)\,dx \qquad (k \text{ 为常数})$$</p>
+<p>区间可加性（假设 $a&lt;c&lt;b$）：</p>
+<p>$$\int_a^b f(x)\,dx = \int_a^c f(x)\,dx + \int_c^b f(x)\,dx$$</p>
+<p>保号性：如果在区间 $[a,b]$ 上 $f(x)\ge 0$，则</p>
+<p>$$\int_a^b f(x)\,dx \ge 0 \qquad (a&lt;b)$$</p>
+<h3 id="3-2-第一中值定理">3.2 第一中值定理</h3>
+<p>如果函数$f(x)$在闭区间$[a,b]$上连续，则在积分区间$[a,b]$上至少存在一个点$\xi$，使$\int_a^bf(x)dx=f(\xi)(b-a) \ \ \ (a \le \xi \le b)$<br>
+<img src="calc-20261127025217.png" alt="积分第一中值定理的几何示意"></p>
+<h3 id="3-3-积分上限函数">3.3 积分上限函数</h3>
+<ul>
+<li>函数$f(x)$在区间$[a,b]$上连续，对于定积分$\int_a^xf(x)dx$每一个取值的x都有一个对应的定积分值</li>
+<li>记作：$\Phi(x)=\int_a^xf(t)dt$</li>
+<li>如果$f(x)$在区间$[a,b]$上连续，则积分上限函数就是$f(x)$在$[a,b]$上的原函数</li>
+<li>写成导数形式（<strong>微积分第一基本定理</strong>）：$\Phi'(x)=f(x)$</li>
+<li>直观理解：$\Phi(x)$ 是「从 $a$ 积到 $x$」的面积，$x$ 再往右挪一点点，新增的那一窄条面积约等于 $f(x)\,dx$，所以增长速率就是 $f(x)$</li>
+</ul>
+<h1>4 牛顿——莱布尼茨公式</h1>
+<h3 id="4-1-定义">4.1 定义</h3>
+<ul>
+<li>如果$F(x)$是连续函数$f(x)$在区间$[a,b]$上的一个原函数则：<br>
+$$
+\int_a^bf(x)dx=F(b)-F(a)
+$$</li>
+<li>解释：一个连续函数在区间$[a,b]$上的定积分等于它的任意一个原函数在区间$[a,b]$上的增量</li>
+</ul>
+<h3 id="4-2-几何解释">4.2 几何解释</h3>
+<p><img src="calc-20261127031542.png" alt="牛顿-莱布尼茨公式的几何解释"><br>
+可得：$$
+F(b)-F(a)=\sum dy
+$$</p>
+<p>由于 $dy=f'(x)dx$：</p>
+<p>$$
+f(b)-f(a)=\sum f'(x)dx = \int_a^b f'(x)dx
+$$</p>
+<h3 id="4-3-计算">4.3 计算</h3>
+<p>例：$$\int_0^\frac{\pi}{2}(2\cos x+\sin x-1)dx$$<br>
+第一题：</p>
+<p>$$\text{原式}=\left[2\sin x -\cos x -x\right]_0^{\frac{\pi}{2}}=3-\frac{\pi}{2}$$</p>
+<p>第二题：设 $f(x)=\begin{cases}2x &amp;0 \le x \le 1, \\ 5 &amp;1 &lt; x \le 2\end{cases}$，求 $\int_0^2f(x)dx$。</p>
+<p>在 $[1,2]$ 上规定当 $x=1$ 时 $f(x)=5$：</p>
+<p>$$\text{原式}=\int_0^12xdx+\int_1^25dx=1+5=6$$<br>
+<img src="calc-20261127032405.png" alt="分段函数求定积分的例子"></p>
+<h3 id="4-4-微积分基本公式">4.4 微积分基本公式</h3>
+<p>$$
+\text{有 } f(x) \in C[a,b], \text{ 且 } F'(x) = f(x)
+$$</p>
+<p>$$
+\int_a^b f(x)\,\mathrm{d}x = 
+\underbrace{f(\xi)(b-a)}_{\color{#FFC107}{\text{积分中值定理}}} = 
+\underbrace{F'(\xi)(b-a)}_{\color{#FFC107}{\text{拉格朗日中值定理}}} = 
+F(b) - F(a)
+$$</p>
+<p>例：计算由曲线$y^2=2x$和直线$y=x-4$所围成的图形的面积<br>
+解：先求两曲线的交点：</p>
+<p>$$
+\begin{cases}y^2=2x \\ y=x-4 \end{cases}
+\Rightarrow (2,-2),\ (8,4)
+$$</p>
+<p>选 $y$ 为积分变量，$y \in [-2,4]$：</p>
+<p>$$
+dA=\left(y+4-\frac{y^2}{2}\right)dy,\qquad A=\int_{-2}^4dA=18
+$$<br>
+<img src="calc-20261127033144.png" alt="y^2=2x 与 y=x-4 围成的面积"></p>
+<h1>5 与 d2l 的联系</h1>
+<p>这一篇的微分部分，是深度学习的主线；积分部分用得少，但要认得。</p>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>在 d2l 里</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>导数</td>
+<td>梯度、反向传播（B04、B11）</td>
+</tr>
+<tr>
+<td>梯度</td>
+<td>梯度下降的方向（B06、B25）</td>
+</tr>
+<tr>
+<td>积分（概率）</td>
+<td>连续分布的 $P(a&lt;X&lt;b)=\int_a^b p(x)\,\mathrm{d}x$</td>
+</tr>
+<tr>
+<td>积分（期望）</td>
+<td>$\mathbb{E}[X]=\int x\,p(x)\,\mathrm{d}x$</td>
+</tr>
+</tbody>
+</table>
+<h2 id="一句话串起来">一句话串起来</h2>
+<ul>
+<li><strong>微分</strong>回答「变多快」：导数 → 梯度 → 反向传播 → 参数更新</li>
+<li><strong>积分</strong>回答「总共多少」：面积 → 累积量 → 概率与期望</li>
+<li><strong>基本定理</strong>把两者连起来：积分是求导的逆运算</li>
+</ul>
+<h1>6 例题详解</h1>
+<p>四个计算例子，逐步拆开，每步说明为什么这么变。</p>
+<h2 id="6-1-用定义算-MATHBLOCKkwofyj-89">6.1 用定义算 $\int_0^1 x^2\,\mathrm{d}x$</h2>
+<p><strong>思路</strong>：不用公式，直接从「面积 = 小矩形之和」出发，看极限。</p>
+<p><strong>第 1 步：分割</strong></p>
+<p>把 $[0,1]$ 等分成 $n$ 份，分点 $x_i=\dfrac{i}{n}$（$i=0,1,\dots,n$）。</p>
+<p>区间长度是 1，$n$ 等分后每份长 $1/n$，第 $i$ 个分点就在 $i/n$ 处。每小段长 $\Delta x_i=1/n$。</p>
+<p><strong>第 2 步：取点</strong></p>
+<p>每小段上任取一点 $\xi_i$，这里取右端点 $\xi_i=x_i=i/n$。</p>
+<p>可以任取，是因为定积分定义要求「任意取点，极限都相同」。取右端点只是算起来整齐。</p>
+<p><strong>第 3 步：求小矩形面积和</strong></p>
+<p>$$\sum_{i=1}^n f(\xi_i)\Delta x_i=\sum_{i=1}^n\left(\frac{i}{n}\right)^2\cdot\frac{1}{n}$$</p>
+<p>高 $f(\xi_i)=\xi_i^2=(i/n)^2$，乘底 $1/n$ 即一个小矩形面积。</p>
+<p><strong>第 4 步：化简</strong></p>
+<p>$$\left(\frac{i}{n}\right)^2\cdot\frac{1}{n}=\frac{i^2}{n^3}\quad\Rightarrow\quad \text{和}=\frac{1}{n^3}\sum_{i=1}^n i^2$$</p>
+<p><strong>第 5 步：代入平方和公式</strong></p>
+<p>$$\sum_{i=1}^n i^2=\frac{n(n+1)(2n+1)}{6}$$</p>
+<p>这是关键变换：把求和换成 $n$ 的表达式，才能取极限。</p>
+<p><strong>第 6 步：整理</strong></p>
+<p>$$\frac{1}{n^3}\cdot\frac{n(n+1)(2n+1)}{6}=\frac{(n+1)(2n+1)}{6n^2}=\frac{1}{6}\left(1+\frac{1}{n}\right)\left(2+\frac{1}{n}\right)$$</p>
+<p>分子分母各提一个 $n$：$\frac{n+1}{n}=1+\frac1n$，$\frac{2n+1}{n}=2+\frac1n$。</p>
+<p><strong>第 7 步：取极限</strong></p>
+<p>$n\to\infty$ 时 $1/n\to0$：</p>
+<p>$$\frac{1}{6}(1+0)(2+0)=\frac{1}{3}$$</p>
+<p><strong>核对</strong>：牛顿–莱布尼茨 $\int_0^1x^2dx=\frac{x^3}{3}\Big|_0^1=\frac13$，一致。</p>
+<h2 id="6-2-MATHBLOCKkwofyj-115">6.2 $\int_0^{\pi/2}(2\cos x+\sin x-1)\,\mathrm{d}x$</h2>
+<p><strong>第 1 步：逐项找原函数</strong></p>
+<table>
+<thead>
+<tr>
+<th>被积函数</th>
+<th>原函数</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$2\cos x$</td>
+<td>$2\sin x$</td>
+<td>$(\sin x)'=\cos x$</td>
+</tr>
+<tr>
+<td>$\sin x$</td>
+<td>$-\cos x$</td>
+<td>$(-\cos x)'=\sin x$</td>
+</tr>
+<tr>
+<td>$-1$</td>
+<td>$-x$</td>
+<td>$(-x)'=-1$</td>
+</tr>
+</tbody>
+</table>
+<p>原函数：$2\sin x-\cos x-x$。</p>
+<p><strong>第 2 步：代入上限 $\pi/2$</strong></p>
+<p>$$2\sin\frac{\pi}{2}-\cos\frac{\pi}{2}-\frac{\pi}{2}=2\cdot1-0-\frac{\pi}{2}=2-\frac{\pi}{2}$$</p>
+<p><strong>第 3 步：代入下限 $0$</strong></p>
+<p>$$2\sin0-\cos0-0=0-1-0=-1$$</p>
+<p><strong>第 4 步：上限减下限</strong></p>
+<p>$$\left(2-\frac{\pi}{2}\right)-(-1)=3-\frac{\pi}{2}$$</p>
+<p><strong>易错</strong>：下限代入要减去整个值，这里减的是 $-1$，所以变 $+1$。</p>
+<h2 id="6-3-分段函数-MATHBLOCKkwofyj-133">6.3 分段函数 $\int_0^2f(x)\,\mathrm{d}x$</h2>
+<p>$f(x)=2x$（$0\le x\le1$）、$f(x)=5$（$1&lt;x\le2$）。</p>
+<p><strong>第 1 步：按分界点拆区间</strong></p>
+<p>$$\int_0^2=\int_0^1+\int_1^2$$</p>
+<p><strong>第 2 步：各用各的表达式</strong></p>
+<p>$$\int_0^1 2x\,\mathrm{d}x=\left[x^2\right]_0^1=1-0=1$$</p>
+<p>$$\int_1^2 5\,\mathrm{d}x=5\cdot(2-1)=5$$</p>
+<p>常数函数积分 = 常数 × 区间长度。</p>
+<p><strong>第 3 步：相加</strong></p>
+<p>$$1+5=6$$</p>
+<p><strong>关于 $x=1$</strong>：单点的函数值不影响积分（面积为 0），归哪一段都行。</p>
+<h2 id="6-4-MATHBLOCKkwofyj-143-与-MATHBLOCKkwofyj-144-围成的面积">6.4 $y^2=2x$ 与 $y=x-4$ 围成的面积</h2>
+<p><strong>第 1 步：求交点</strong></p>
+<p>把 $x=y+4$ 代入 $y^2=2x$：</p>
+<p>$$y^2=2(y+4)=2y+8\quad\Rightarrow\quad y^2-2y-8=0\quad\Rightarrow\quad (y-4)(y+2)=0$$</p>
+<p>$y=4$ 或 $y=-2$，对应交点 $(8,4)$、$(2,-2)$。积分区间由交点决定。</p>
+<p><strong>第 2 步：选 $y$ 为积分变量</strong>，$y\in[-2,4]$。</p>
+<p>为什么选 $y$：对 $x$ 积分时右边要「换线」（抛物线一段 + 直线一段），必须拆；对 $y$ 积分时右边界恒为直线 $x=y+4$，左边界恒为抛物线 $x=y^2/2$，一个式子够用。</p>
+<p><strong>第 3 步：面积元（右减左）</strong></p>
+<p>$$\mathrm{d}A=\left[(y+4)-\frac{y^2}{2}\right]\mathrm{d}y$$</p>
+<p>高度 $y$ 处：右边 $x=y+4$，左边 $x=y^2/2$，横坐标之差就是窄条宽度。</p>
+<p><strong>第 4 步：积分</strong></p>
+<p>$$A=\int_{-2}^{4}\left(y+4-\frac{y^2}{2}\right)\mathrm{d}y$$</p>
+<p><strong>第 5 步：找原函数</strong></p>
+<table>
+<thead>
+<tr>
+<th>项</th>
+<th>原函数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$y$</td>
+<td>$y^2/2$</td>
+</tr>
+<tr>
+<td>$4$</td>
+<td>$4y$</td>
+</tr>
+<tr>
+<td>$-y^2/2$</td>
+<td>$-y^3/6$</td>
+</tr>
+</tbody>
+</table>
+<p><strong>第 6 步：代入上限 $y=4$</strong></p>
+<p>$$\frac{16}{2}+16-\frac{64}{6}\approx 13.333$$</p>
+<p><strong>第 7 步：代入下限 $y=-2$</strong></p>
+<p>$$\frac{4}{2}-8-\frac{(-2)^3}{6}=2-8+\frac{8}{6}\approx -4.667$$</p>
+<p><strong>第 8 步：相减</strong></p>
+<p>$$13.333-(-4.667)=18$$</p>
+<p><strong>易错</strong>：下限的 $y^3/6$ 项，$(-2)^3=-8$，前面有负号，所以是 $-\frac{-8}{6}=+\frac{8}{6}$，符号容易错。</p>
+<h2 id="6-5-四个例子的共同套路">6.5 四个例子的共同套路</h2>
+<table>
+<thead>
+<tr>
+<th>例</th>
+<th>方法</th>
+<th>关键变换</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6.1</td>
+<td>定义法</td>
+<td>求和 → 平方和公式 → 取极限</td>
+</tr>
+<tr>
+<td>6.2</td>
+<td>牛–莱公式</td>
+<td>逐项找原函数 → 上下限相减</td>
+</tr>
+<tr>
+<td>6.3</td>
+<td>拆区间</td>
+<td>分界点处拆开，各用各的表达式</td>
+</tr>
+<tr>
+<td>6.4</td>
+<td>面积</td>
+<td>求交点定区间 → 选积分变量 → 右减左</td>
+</tr>
+</tbody>
+</table>
+
+
+        <hr>
+        <!-- Pager -->
+        
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/cn/math-basics-notes/" data-toggle="tooltip" data-placement="top" title="【高等数学基础】学习笔记">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" rel="noopener noreferrer" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" rel="noopener noreferrer" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" rel="noopener noreferrer" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" rel="noopener noreferrer" class="social-share-icon" href="mailto:?subject=【微积分】学习笔记&body=Hi,I found this website and thought you might like it https://blog.vesperon.online/cn/calculus-notes/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 0. utterances（GitHub Issues，无需服务端 / 无密钥） -->
+
+  <!-- utterances start -->
+  <div class="utterances-wrap">
+    <script src="https://utteranc.es/client.js"
+      repo="deliya2011/vesperon-blog"
+      issue-term="pathname"
+      label="comment"
+      theme="github-dark"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </div>
+  <script>
+    // 跟随站点明暗切换同步评论框主题
+    (function () {
+      function themeName() {
+        return document.body.classList.contains('body--dark') ? 'github-dark' : 'github-light';
+      }
+      function syncTheme() {
+        var f = document.querySelector('iframe.utterances-frame');
+        if (f && f.contentWindow) {
+          f.contentWindow.postMessage({ type: 'set-theme', theme: themeName() }, 'https://utteranc.es');
+        }
+      }
+      document.addEventListener('DOMContentLoaded', function () {
+        var btn = document.querySelector('.toggle');
+        if (btn) btn.addEventListener('click', function () { setTimeout(syncTheme, 60); });
+      });
+    }());
+  </script>
+  <!-- utterances end -->
+
+
+<!-- 1. gitalk comment -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#AI" title="AI">AI</a>
+            
+            <a class="tag" href="/tags/#数学" title="数学">数学</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline friend-links">
+
+          
+          <li>
+            <a href="https://blog.qaaxaap.living/zh/" target="_blank">Qaaxaap</a>
+          </li>
+          
+          <li>
+            <a href="https://pulsar33550336.github.io/" target="_blank">Pulsar</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" rel="noopener noreferrer" href="https://github.com/deliya2011">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Vesperon
+          2026
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://blog.vesperon.online/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res || !localStorage.getItem('searchJson')) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json']);
+          },
+          error: function (e) {
+            console.error('Unable to load the local search index.', e);
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var storedSearchData = localStorage.getItem('searchJson');
+      if (!storedSearchData) {
+        resultContent.innerHTML = '<div id="no-result">Loading search index…</div>';
+        proceedsearch();
+        return;
+      }
+
+      var datas;
+      try {
+        datas = JSON.parse(storedSearchData);
+      } catch (error) {
+        localStorage.removeItem('searchJson');
+        resultContent.innerHTML = '<div id="no-result">Search index could not be loaded. Please try again.</div>';
+        proceedsearch();
+        return;
+      }
+      if (!Array.isArray(datas)) {
+        resultContent.innerHTML = '<div id="no-result">Search index is unavailable.</div>';
+        proceedsearch();
+        return;
+      }
+      isfetched = true;
+
+      function escapeHtml(value) {
+        return String(value).replace(/[&<>'"]/g, function (character) {
+          return ({'&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'})[character];
+        });
+      }
+
+      function safeUrl(value) {
+        try {
+          var url = decodeURIComponent(value || '');
+          return /^(?:https?:)?\/\//i.test(url) || /^(?:\/|\.\/|\.\.\/)/.test(url) ? url : '#';
+        } catch (error) {
+          return '#';
+        }
+      }
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = safeUrl(data.url);
+
+            var date = data.date || '';
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += escapeHtml(text.substring(prevEnd, hit.position));
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + escapeHtml(text.substring(hit.position, end)) + '</b>';
+                  prevEnd = end;
+                });
+                result += escapeHtml(text.substring(prevEnd, slice.end));
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' rel='noopener noreferrer' href='" + escapeHtml(articleUrl) + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + escapeHtml(dateTime) + "</time>";
+              } else {
+                resultItem += "<a target='_blank' rel='noopener noreferrer' href='" + escapeHtml(articleUrl) + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + escapeHtml(title) + "</div><time class='search-result-date'>" + escapeHtml(dateTime) + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + escapeHtml(safeUrl(imgUrl)) + "' width='64' height='48' alt=''></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	</body>
+</html>
