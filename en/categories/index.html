@@ -261,7 +261,7 @@
       </option>
       
       
-      <option value="cn" data-href="/">
+      <option value="cn" data-href="/categories/">
         简体中文
       </option>
       
@@ -321,19 +321,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.45)), url('/img/header_img/sunshine-sea.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.45)), url('img/header_img/categories_bg.jpg');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.56)), url('/img/header_img/categories_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.45)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.56)), url('/img/header_img/archive_bg2.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.52)), url('/img/header_img/sunshine-sea.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.52)), url('img/header_img/categories_bg.jpg');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.62)), url('/img/header_img/categories_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.52)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.62)), url('/img/header_img/archive_bg2.jpg');
     }
 
     header.intro-header {
        /*page*/
         background-image: var(--intro-header-background-image-url-page);
-        /* background-image: url('/img/header_img/categories_bg.jpg'); */
+        /* background-image: url('/img/header_img/archive_bg2.jpg'); */
       
     }
 
@@ -368,7 +368,7 @@
             
             <h1>Categories</h1>
             <!--<hr class="small">-->
-            <span class="subheading">Sorted by the texture of feathers — each a different way of perching.</span>
+            <span class="subheading">Where feathers fall, there lies the roost; among a thousand drifting lights, I gather one.</span>
           </div>
           
         </div>
@@ -399,10 +399,6 @@
 
 <!-- 页面级背景构图微调：在页面 front-matter 里写 header-position 即可 -->
 
-<style type="text/css">
-  header.intro-header { background-position: center 45% !important; }
-</style>
-
 
 
 		<!-- Main Content (Post contains
@@ -417,128 +413,28 @@
 	anchorjs、
 	) -->
 		<!-- Main Content -->
+
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <!-- 分类页面 -->
-
-      
-
-
-
-      <!-- 标签云 -->
+      <!-- 分类云 -->
       <div id='tag_cloud' class="tags">
         
-        <a href="#随笔" title="随笔" rel="2">随笔</a>
+        <a href="#学习笔记" title="学习笔记" rel="2">学习笔记</a>
         
-        <a href="#游记" title="游记" rel="1">游记</a>
+        <a href="#随笔" title="随笔" rel="1">随笔</a>
         
-        <a href="#学习笔记" title="学习笔记" rel="4">学习笔记</a>
-        
-        <a href="#题解" title="题解" rel="3">题解</a>
+        <a href="#题解" title="题解" rel="1">题解</a>
         
       </div>
 
-      <!-- 标签列表 -->
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="随笔">
-          <span class="tag-text">随笔</span>
-        </span>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/cn/birdwatching/">
-            <h2 class="post-title">
-              浅谈观鸟
-            </h2>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/en/birdwatching/">
-            <h2 class="post-title">
-              On Birdwatching
-            </h2>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="游记">
-          <span class="tag-text">游记</span>
-        </span>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/cn/csp-2026/">
-            <h2 class="post-title">
-              CSP 2026 游寄
-            </h2>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-      </div>
+      <!-- 分类列表 -->
       
       <div class="one-tag-list">
         <span class="fa fa-tag listing-seperator" id="学习笔记">
-          <span class="tag-text">学习笔记</span>
+          <span class="tag-text"><a href="/en/categories/学习笔记/">学习笔记</a></span>
         </span>
         
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/cn/calculus-notes/">
-            <h2 class="post-title">
-              【微积分】学习笔记
-            </h2>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/cn/math-basics-notes/">
-            <h2 class="post-title">
-              【高等数学基础】学习笔记
-            </h2>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
         <div class="post-preview">
           <a href="/en/calculus-notes/">
             <h2 class="post-title">
@@ -546,14 +442,9 @@
             </h2>
             
           </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
         </div>
         <hr>
         
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
         <div class="post-preview">
           <a href="/en/math-basics-notes/">
             <h2 class="post-title">
@@ -561,7 +452,23 @@
             </h2>
             
           </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+      </div>
+      
+      <div class="one-tag-list">
+        <span class="fa fa-tag listing-seperator" id="随笔">
+          <span class="tag-text"><a href="/en/categories/随笔/">随笔</a></span>
+        </span>
+        
+        <div class="post-preview">
+          <a href="/en/birdwatching/">
+            <h2 class="post-title">
+              On Birdwatching
+            </h2>
+            
+          </a>
         </div>
         <hr>
         
@@ -569,43 +476,9 @@
       
       <div class="one-tag-list">
         <span class="fa fa-tag listing-seperator" id="题解">
-          <span class="tag-text">题解</span>
+          <span class="tag-text"><a href="/en/categories/题解/">题解</a></span>
         </span>
         
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/cn/gxyz-1029-div2-t2/">
-            <h2 class="post-title">
-              GXYZ 10.29 DIV2 T2 题解
-            </h2>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/cn/p17849-houran-sequence/">
-            <h2 class="post-title">
-              题解：P17849「RiOI-(-2)」houran 和序列
-            </h2>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
         <div class="post-preview">
           <a href="/en/gxyz-1029-div2-t2/">
             <h2 class="post-title">
@@ -613,7 +486,6 @@
             </h2>
             
           </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
         </div>
         <hr>
         
