@@ -398,11 +398,11 @@
             
             
             
-            
-            <span class="meta">
-              <img class="vc-badge" alt="article views"
-                   src="https://hits.sh/blog.vesperon.online/cn/math-basics-notes.svg?label=Viewed&color=0085a1&style=flat-square">
+            <!-- 单篇阅读量：自建计数 start -->
+            <span class="meta" id="vc_post_pv_wrap" style="display:none">
+              Viewed <span id="vc_post_pv">&mdash;</span> Times
             </span>
+            <!-- 单篇阅读量 end -->
             
             
 
@@ -1147,6 +1147,40 @@ https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
 <!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://blog.vesperon.online/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
 start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
 
+
+<!-- 访问量计数：Cloudflare Worker + D1（自建，数据完全自有） -->
+<script>
+(function () {
+  var API = 'https://vesperon-hits.vesperon1145.workers.dev'.replace(/\/+$/, '');
+  if (!API) return;
+
+  var rawPath = 'cn/math-basics-notes/';
+  var pagePath = '/' + rawPath.replace(/index\.html$/, '').replace(/^\/+/, '');
+
+  fetch(API + '/hit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ page: pagePath })
+  }).then(function (r) {
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  }).then(function (d) {
+    function set(id, v) {
+      var el = document.getElementById(id);
+      if (el && v != null) el.textContent = Number(v).toLocaleString();
+    }
+    set('vc_site_pv', d.site && d.site.pv);
+    set('vc_site_uv', d.site && d.site.uv);
+    set('vc_post_pv', d.page && d.page.pv);
+    var w1 = document.getElementById('visitor-widget');
+    if (w1) w1.style.display = '';
+    var w2 = document.getElementById('vc_post_pv_wrap');
+    if (w2) w2.style.display = '';
+  }).catch(function (e) {
+    console.warn('[visitor counter]', e);
+  });
+})();
+</script>
 
 
 

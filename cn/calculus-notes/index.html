@@ -398,11 +398,11 @@
             
             
             
-            
-            <span class="meta">
-              <img class="vc-badge" alt="article views"
-                   src="https://hits.sh/blog.vesperon.online/cn/calculus-notes.svg?label=Viewed&color=0085a1&style=flat-square">
+            <!-- 单篇阅读量：自建计数 start -->
+            <span class="meta" id="vc_post_pv_wrap" style="display:none">
+              Viewed <span id="vc_post_pv">&mdash;</span> Times
             </span>
+            <!-- 单篇阅读量 end -->
             
             
 
@@ -623,7 +623,7 @@ $$<br>
 </ul>
 <h1>6 例题详解</h1>
 <p>四个计算例子，逐步拆开，每步说明为什么这么变。</p>
-<h2 id="6-1-用定义算-MATHBLOCK06kyrw-89">6.1 用定义算 $\int_0^1 x^2\,\mathrm{d}x$</h2>
+<h2 id="6-1-用定义算-MATHBLOCKkc49xl-89">6.1 用定义算 $\int_0^1 x^2\,\mathrm{d}x$</h2>
 <p><strong>思路</strong>：不用公式，直接从「面积 = 小矩形之和」出发，看极限。</p>
 <p><strong>第 1 步：分割</strong></p>
 <p>把 $[0,1]$ 等分成 $n$ 份，分点 $x_i=\dfrac{i}{n}$（$i=0,1,\dots,n$）。</p>
@@ -646,7 +646,7 @@ $$<br>
 <p>$n\to\infty$ 时 $1/n\to0$：</p>
 <p>$$\frac{1}{6}(1+0)(2+0)=\frac{1}{3}$$</p>
 <p><strong>核对</strong>：牛顿–莱布尼茨 $\int_0^1x^2dx=\frac{x^3}{3}\Big|_0^1=\frac13$，一致。</p>
-<h2 id="6-2-MATHBLOCK06kyrw-115">6.2 $\int_0^{\pi/2}(2\cos x+\sin x-1)\,\mathrm{d}x$</h2>
+<h2 id="6-2-MATHBLOCKkc49xl-115">6.2 $\int_0^{\pi/2}(2\cos x+\sin x-1)\,\mathrm{d}x$</h2>
 <p><strong>第 1 步：逐项找原函数</strong></p>
 <table>
 <thead>
@@ -682,7 +682,7 @@ $$<br>
 <p><strong>第 4 步：上限减下限</strong></p>
 <p>$$\left(2-\frac{\pi}{2}\right)-(-1)=3-\frac{\pi}{2}$$</p>
 <p><strong>易错</strong>：下限代入要减去整个值，这里减的是 $-1$，所以变 $+1$。</p>
-<h2 id="6-3-分段函数-MATHBLOCK06kyrw-133">6.3 分段函数 $\int_0^2f(x)\,\mathrm{d}x$</h2>
+<h2 id="6-3-分段函数-MATHBLOCKkc49xl-133">6.3 分段函数 $\int_0^2f(x)\,\mathrm{d}x$</h2>
 <p>$f(x)=2x$（$0\le x\le1$）、$f(x)=5$（$1&lt;x\le2$）。</p>
 <p><strong>第 1 步：按分界点拆区间</strong></p>
 <p>$$\int_0^2=\int_0^1+\int_1^2$$</p>
@@ -693,7 +693,7 @@ $$<br>
 <p><strong>第 3 步：相加</strong></p>
 <p>$$1+5=6$$</p>
 <p><strong>关于 $x=1$</strong>：单点的函数值不影响积分（面积为 0），归哪一段都行。</p>
-<h2 id="6-4-MATHBLOCK06kyrw-143-与-MATHBLOCK06kyrw-144-围成的面积">6.4 $y^2=2x$ 与 $y=x-4$ 围成的面积</h2>
+<h2 id="6-4-MATHBLOCKkc49xl-143-与-MATHBLOCKkc49xl-144-围成的面积">6.4 $y^2=2x$ 与 $y=x-4$ 围成的面积</h2>
 <p><strong>第 1 步：求交点</strong></p>
 <p>把 $x=y+4$ 代入 $y^2=2x$：</p>
 <p>$$y^2=2(y+4)=2y+8\quad\Rightarrow\quad y^2-2y-8=0\quad\Rightarrow\quad (y-4)(y+2)=0$$</p>
@@ -1124,6 +1124,40 @@ https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
 <!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://blog.vesperon.online/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
 start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
 
+
+<!-- 访问量计数：Cloudflare Worker + D1（自建，数据完全自有） -->
+<script>
+(function () {
+  var API = 'https://vesperon-hits.vesperon1145.workers.dev'.replace(/\/+$/, '');
+  if (!API) return;
+
+  var rawPath = 'cn/calculus-notes/';
+  var pagePath = '/' + rawPath.replace(/index\.html$/, '').replace(/^\/+/, '');
+
+  fetch(API + '/hit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ page: pagePath })
+  }).then(function (r) {
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  }).then(function (d) {
+    function set(id, v) {
+      var el = document.getElementById(id);
+      if (el && v != null) el.textContent = Number(v).toLocaleString();
+    }
+    set('vc_site_pv', d.site && d.site.pv);
+    set('vc_site_uv', d.site && d.site.uv);
+    set('vc_post_pv', d.page && d.page.pv);
+    var w1 = document.getElementById('visitor-widget');
+    if (w1) w1.style.display = '';
+    var w2 = document.getElementById('vc_post_pv_wrap');
+    if (w2) w2.style.display = '';
+  }).catch(function (e) {
+    console.warn('[visitor counter]', e);
+  });
+})();
+</script>
 
 
 
