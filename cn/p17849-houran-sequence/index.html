@@ -300,19 +300,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.45)), url('/img/header_img/sunshine-sea.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.45)), url('');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.56)), url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.45)), url('/img/header_img/anime-bunny-girl.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.56)), url('//img/header_img/anime-bunny-girl.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.52)), url('/img/header_img/sunshine-sea.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.52)), url('');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.62)), url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.52)), url('/img/header_img/anime-bunny-girl.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.62)), url('//img/header_img/anime-bunny-girl.jpg');
     }
 
     header.intro-header {
        /*post*/
         background-image: var(--intro-header-background-image-url-post);
-        /* background-image: url(''); */
+        /* background-image: url('/img/header_img/anime-bunny-girl.jpg'); */
       
     }
 
@@ -410,6 +410,10 @@
 
 
 <!-- 页面级背景构图微调：在页面 front-matter 里写 header-position 即可 -->
+
+<style type="text/css">
+  header.intro-header { background-position: center 40% !important; }
+</style>
 
 
 
