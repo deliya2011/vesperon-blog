@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+
+  <!-- Baidu Tongji -->
+  
+
+  <!-- Baidu Push -->
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <!-- 作者的搜索引擎验证标签已移除：保留它们会让别人的 Google/百度账号能验证你的域名所有权 -->
+  <!-- 你自己要用时，把从 Search Console 拿到的 meta 贴在这里 -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="羽毛落处，皆是归处；于万千轻盈中，拾得其一。"/>
+  <meta name="keyword" content="Vesperon,blog"/>
+  <link rel="shortcut icon" href="/img/avatar/favicon.png"/>
+
+  
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      };
+    </script>
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://blog.vesperon.online/cn/noip-2026-diary/">
+  <title>
+    
+      若由我来谈论爱的话——NOIP 2026 游寄 &amp; OI 回忆录 - Gathering Feathers
+    
+  </title>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<button class="toggle" type="button" aria-label="Toggle color theme" aria-pressed="false">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</button>
+<script>
+  function getCookieValue(name) {
+    var match = document.cookie.match('(^|[^;]+)\\s*' + name + '\\s*=\\s*([^;]+)');
+    return match ? match.pop() : '';
+  }
+
+  var savedTheme = getCookieValue('sb-color-mode');
+  if (savedTheme === 'dark' || savedTheme === 'light') {
+    document.body.classList.toggle('body--dark', savedTheme === 'dark');
+  }
+
+  var toggleBtn = document.querySelector('.toggle');
+  function updateThemeToggle() {
+    toggleBtn.setAttribute('aria-pressed', String(document.body.classList.contains('body--dark')));
+  }
+  updateThemeToggle();
+
+  toggleBtn.addEventListener('click', function () {
+    document.body.classList.toggle('body--dark');
+    var theme = document.body.classList.contains('body--dark') ? 'dark' : 'light';
+    var exp = new Date();
+    exp.setFullYear(exp.getFullYear() + 1);
+    document.cookie = 'sb-color-mode=' + theme + ';expires=' + exp.toUTCString() + ';path=/;SameSite=Lax';
+    updateThemeToggle();
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Vesperon</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          
+          
+          
+          <li>
+            <a href="/categories/">分类</a>
+          </li>
+          
+          
+          
+          
+          <li>
+            <a href="/tags/">标签</a>
+          </li>
+          
+          
+          
+          
+          <li>
+            <a href="/archive/">归档</a>
+          </li>
+          
+          
+          
+          
+          <li>
+            <a href="/about/">关于</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.45)), url('/img/header_img/sunshine-sea.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.45)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.56)), url('/img/header_img/archive_bg2.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.52)), url('/img/header_img/sunshine-sea.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.52)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.62)), url('/img/header_img/archive_bg2.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url(''); */
+      
+    }
+
+    
+  </style>
+
+
+<!-- Keep the wave edge flush with the header when the theme is served from a CDN. -->
+<style>
+  .preview-overlay .preview-waves {
+    display: block;
+    vertical-align: top;
+  }
+
+  a:focus:not(:focus-visible),
+  button:focus:not(:focus-visible) {
+    outline: none;
+  }
+</style>
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/oi/" title="oi">oi</a>
+              
+            </div>
+            <h1>若由我来谈论爱的话——NOIP 2026 游寄 &amp; OI 回忆录</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by Vesperon on
+              2026-11-28
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">12</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">1.5k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            
+            <!-- 单篇阅读量：自建计数 start -->
+            <span class="meta" id="vc_post_pv_wrap" style="display:none">
+              Viewed <span id="vc_post_pv">&mdash;</span> Times
+            </span>
+            <!-- 单篇阅读量 end -->
+            
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+<!-- 页面级背景构图微调：在页面 front-matter 里写 header-position 即可 -->
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <blockquote>
+<p>本文经AI润色/整理</p>
+</blockquote>
+<blockquote>
+<p>We’re living in the moment<br>
+like tomorrow never never ever will arrive<br>
+It’s time to light up！<br>
+We don’t care if all the world falls down tonight<br>
+We just wanna lose ourselves beyond the sky<br>
+Turn it up and let the miracles arrive<br>
+We’ll live forever, this galaxy glowing so bright<br>
+——崩坏：星穹铁道《无中生有》</p>
+</blockquote>
+<h1>DAY -5</h1>
+<p>在gxsy停课。</p>
+<p>很难说这些天究竟做了什么。时间像被水稀释过的墨，晕开，又淡去。默写了几遍线段树的板子，仿佛只要模板还背得出来，心里就还有一块地方是踏实的。</p>
+<p>随机翻了翻算法，翻着翻着意识到我是区区。</p>
+<p>刚考完 CAICP 第一轮，预计 95pts。为什么当初不敢报 S 呢？空悲切。</p>
+<p>打算认真补一下高数基础。可是 whk 已经好几天没怎么碰了。希望不会出锅。</p>
+<h1>DAY 0</h1>
+<p>CAICP-J 出成绩了。一等奖，意料之中。</p>
+<p>没有想象中的狂喜，也没有如释重负，只是觉得「哦，果然如此」。接下来的时间不知道做什么，随机做题。默写各类板子——实则只有线段树和 dij。然后点开洛谷文章区，一条一条地观赏。</p>
+<p>不错的消息是：考场居然在 xgdfz，也就是我家楼下。</p>
+<p>晚上回家睡了三个小时，起床看了会板子，和 Qaaxaap、Pulsar 互相祝了 RP++，然后继续睡。像是出征前最后一次清点行囊，又像只是再普通不过的一夜。</p>
+<h1>DAY 1</h1>
+<p>起床，下楼，到达考点。</p>
+<p>顺手买了个巧克力和饼干。</p>
+<p>如今站在母校门前，多少也有些感慨。也许初一、初二的时候认真搞 OI，我就不会沦落到搞笑椅子分校了。不过后悔是没有意义的——以前的我，做出的也是当下最正确的选择。只要一直在往前走，无论多远，路就不会白走。</p>
+<h2 id="T-30min">T-30min</h2>
+<p>进入考场，罚坐。</p>
+<p>闭上眼回想看过的板子，不错，都还记得。拿喝完的豆浆杯子接了点水，权当水杯。</p>
+<p>不过这个空间怎么这么逼仄？稍微一动就容易肘到隔板。</p>
+<p>监考老师居然是初中时的信息老师。轻松绷住。</p>
+<p>那一刻，我似乎已经预见了结局。</p>
+<h2 id="T-5min">T-5min</h2>
+<p>允许动电脑了。</p>
+<p>迅速敲了一棵线段树，编译，运行，一切正常。看起来，我并没有忘掉什么。</p>
+<p>等待发题。</p>
+<h2 id="T-0min">T+0min</h2>
+<p>题目下发。</p>
+<p>浏览一遍，第三题居然叫青鸟（bird）。观鸟人狂喜（bushi</p>
+<p>建文件夹，建 .cpp 文件。</p>
+<h2 id="T-5min-2">T+5min</h2>
+<p>轻松水了 T1 暴力。</p>
+<p>（考后记：写的是错的。）</p>
+<p>开始观察性质，打表。似乎注意到了什么。</p>
+<h2 id="T-40min">T+40min</h2>
+<p>注意到：</p>
+<ul>
+<li>|a-b| 为质数时，答案是这个质数的倍数；</li>
+<li>|a-b| 为合数时，答案是这个数的质因子的倍数；</li>
+<li>|a-b| 为 0、1 时特判。</li>
+</ul>
+<p>（后记：假了。正解应该是枚举 |a-b| 的所有约数。）</p>
+<p>可是我不会写任何质数筛，遂放弃。</p>
+<p>（后记：根本不需要写质数筛。）</p>
+<p>（AI：命运的玩笑就是这么直白——拦在我面前的，其实从来不是那堵墙，而是我以为存在的那堵墙。我：挺有乐子的，放上来得了）</p>
+<h2 id="T-1h30min">T+1h30min</h2>
+<p>又想了一会儿 T1，确认还是不会写，转战 T2。</p>
+<p>T2 看起来朴素模拟可拿分。开写。</p>
+<h2 id="T-2h30min">T+2h30min</h2>
+<p>各种 debug，各种测试。</p>
+<p>出了一车神秘错误，修了很久。</p>
+<h2 id="T-3h30min">T+3h30min</h2>
+<p>还在 debug。</p>
+<p>150 多行的石山代码，摇摇欲坠地堆在那里。每一行都像一块随手垒上去的砖，我不知道它什么时候会塌，只知道此刻还不能停手。</p>
+<h2 id="T-4h">T+4h</h2>
+<p>为什么我的 pos 错误累加在不该有值的地方有值？！</p>
+<p>我崩溃了。</p>
+<p>轻松放弃。反正只剩半个小时了，看题都看不完，写什么暴力，写个**。</p>
+<p>于是开始在 T3 的注释里写神秘话。</p>
+<h2 id="T-4h25min">T+4h25min</h2>
+<p>在 T3 里写下歌词，以及我、Qaaxaap、Pulsar 的 QQ 个签。</p>
+<p>仿佛早已预见过结局，平静写了个预计得分 0pts。</p>
+<h2 id="T-4h30min">T+4h30min</h2>
+<p>结束了。</p>
+<p>真的结束了。</p>
+<p>我有关 OI 的一切。</p>
+<p>战争结束了。</p>
+<h2 id="T-4h45min">T+4h45min</h2>
+<p>走出考场。</p>
+<p><strong>天色湛蓝，晴空万里。</strong></p>
+<blockquote>
+<p>可那些没有天赋的人呢？<br>
+譬如我<br>
+枕头下发霉的梦<br>
+怎么做<br>
+热忱与自卑对抗着<br>
+笑容早已不知下落<br>
+可如果<br>
+等不到 一场世俗 的成功<br>
+成不了 万众瞩目 那一个<br>
+我能不能在某个角落<br>
+耗尽天真开出小小的花朵</p>
+</blockquote>
+<p><s>骗你的，对 OI 没有热爱。</s></p>
+<h1>赛后</h1>
+<p>上洛谷估分。T1 炸了，T2 不知道有没有分，大概率也没有。喜提保龄。</p>
+<p>不过我并没有什么遗憾了。本身这次经历就已经足够宝贵，这就够了。</p>
+<p>接下来就是 AI 竞赛了。这将是我接下来三年都要做的事情。</p>
+<p>至于 OI——此情可待成追忆，只是当时已惘然。</p>
+<h1>OI 回忆录</h1>
+<p>2023 年，我进入 xgdfz 初中部，开始学习 OI。洛谷账号注册于 2023-11-28。那是一个起点，彼时并不知道这条路会通向哪里。</p>
+<p>2024 年（？），结识 Qaaxaap 和 Pulsar。第一次打 CSP-J，拿了 2=。同学们基本都是 1=。</p>
+<p>2024–2025 年，繁忙的 whk 以及个人能力的原因，让我感到学 OI 无望，逐渐淡出了这条路。</p>
+<p>2025 年 CSP-J，具体多少分早已忘记了，总之连奖都没拿上。</p>
+<p>2026 年中考后，复健，其实不如说，我只学了 3 个月 OI，毕竟之前也没怎么好好学。拿了 CSP-J 2=、CSP-S 2=，NOIP 肯定是没奖了。</p>
+<p><strong>AFOed on 2026.11.28</strong></p>
+<blockquote>
+<p>One more time,one more time<br>
+“Once again today this girl will keep on rolling”<br>
+So she says,so she says<br>
+Picking out her words that she uses as a cover<br>
+“Are you fine?”<br>
+“No, not quite this time”<br>
+“Everywhere I’m looking the future is out of sight”<br>
+For now I’ll try to stop breathing</p>
+</blockquote>
+
+
+        <hr>
+        <!-- Pager -->
+        
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/cn/calculus-notes/" data-toggle="tooltip" data-placement="top" title="【微积分】学习笔记">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" rel="noopener noreferrer" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" rel="noopener noreferrer" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" rel="noopener noreferrer" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" rel="noopener noreferrer" class="social-share-icon" href="mailto:?subject=若由我来谈论爱的话——NOIP 2026 游寄 &amp; OI 回忆录&body=Hi,I found this website and thought you might like it https://blog.vesperon.online/cn/noip-2026-diary/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 0. utterances（GitHub Issues，无需服务端 / 无密钥） -->
+
+  <!-- utterances start -->
+  <div class="utterances-wrap">
+    <script src="https://utteranc.es/client.js"
+      repo="deliya2011/vesperon-blog"
+      issue-term="pathname"
+      label="comment"
+      theme="github-dark"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </div>
+  <script>
+    // 跟随站点明暗切换同步评论框主题
+    (function () {
+      function themeName() {
+        return document.body.classList.contains('body--dark') ? 'github-dark' : 'github-light';
+      }
+      function syncTheme() {
+        var f = document.querySelector('iframe.utterances-frame');
+        if (f && f.contentWindow) {
+          f.contentWindow.postMessage({ type: 'set-theme', theme: themeName() }, 'https://utteranc.es');
+        }
+      }
+      document.addEventListener('DOMContentLoaded', function () {
+        var btn = document.querySelector('.toggle');
+        if (btn) btn.addEventListener('click', function () { setTimeout(syncTheme, 60); });
+      });
+    }());
+  </script>
+  <!-- utterances end -->
+
+
+<!-- 1. gitalk comment -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/oi/" title="oi">oi</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline friend-links">
+
+          
+          <li>
+            <a href="https://blog.qaaxaap.living/zh/" target="_blank">Qaaxaap</a>
+          </li>
+          
+          <li>
+            <a href="https://pulsar33550336.github.io/" target="_blank">Pulsar</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" rel="noopener noreferrer" href="https://github.com/deliya2011">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Vesperon
+          2026
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://blog.vesperon.online/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+<!-- 访问量计数：Cloudflare Worker + D1（自建，数据完全自有） -->
+<script>
+(function () {
+  var API = 'https://vesperon-hits.vesperon1145.workers.dev'.replace(/\/+$/, '');
+  if (!API) return;
+
+  var rawPath = 'cn/noip-2026-diary/';
+  var pagePath = '/' + rawPath.replace(/index\.html$/, '').replace(/^\/+/, '');
+
+  fetch(API + '/hit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ page: pagePath })
+  }).then(function (r) {
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  }).then(function (d) {
+    function set(id, v) {
+      var el = document.getElementById(id);
+      if (el && v != null) el.textContent = Number(v).toLocaleString();
+    }
+    set('vc_site_pv', d.site && d.site.pv);
+    set('vc_site_uv', d.site && d.site.uv);
+    set('vc_post_pv', d.page && d.page.pv);
+    var w1 = document.getElementById('visitor-widget');
+    if (w1) w1.style.display = '';
+    var w2 = document.getElementById('vc_post_pv_wrap');
+    if (w2) w2.style.display = '';
+  }).catch(function (e) {
+    console.warn('[visitor counter]', e);
+  });
+})();
+</script>
+
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res || !localStorage.getItem('searchJson')) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json']);
+          },
+          error: function (e) {
+            console.error('Unable to load the local search index.', e);
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var storedSearchData = localStorage.getItem('searchJson');
+      if (!storedSearchData) {
+        resultContent.innerHTML = '<div id="no-result">Loading search index…</div>';
+        proceedsearch();
+        return;
+      }
+
+      var datas;
+      try {
+        datas = JSON.parse(storedSearchData);
+      } catch (error) {
+        localStorage.removeItem('searchJson');
+        resultContent.innerHTML = '<div id="no-result">Search index could not be loaded. Please try again.</div>';
+        proceedsearch();
+        return;
+      }
+      if (!Array.isArray(datas)) {
+        resultContent.innerHTML = '<div id="no-result">Search index is unavailable.</div>';
+        proceedsearch();
+        return;
+      }
+      isfetched = true;
+
+      function escapeHtml(value) {
+        return String(value).replace(/[&<>'"]/g, function (character) {
+          return ({'&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'})[character];
+        });
+      }
+
+      function safeUrl(value) {
+        try {
+          var url = decodeURIComponent(value || '');
+          return /^(?:https?:)?\/\//i.test(url) || /^(?:\/|\.\/|\.\.\/)/.test(url) ? url : '#';
+        } catch (error) {
+          return '#';
+        }
+      }
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = safeUrl(data.url);
+
+            var date = data.date || '';
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += escapeHtml(text.substring(prevEnd, hit.position));
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + escapeHtml(text.substring(hit.position, end)) + '</b>';
+                  prevEnd = end;
+                });
+                result += escapeHtml(text.substring(prevEnd, slice.end));
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' rel='noopener noreferrer' href='" + escapeHtml(articleUrl) + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + escapeHtml(dateTime) + "</time>";
+              } else {
+                resultItem += "<a target='_blank' rel='noopener noreferrer' href='" + escapeHtml(articleUrl) + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + escapeHtml(title) + "</div><time class='search-result-date'>" + escapeHtml(dateTime) + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + escapeHtml(safeUrl(imgUrl)) + "' width='64' height='48' alt=''></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	</body>
+</html>
